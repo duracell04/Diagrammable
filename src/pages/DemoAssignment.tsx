@@ -179,20 +179,20 @@ const StudentDiagram = () => {
 
       {/* Orders 1-N Order_Items relationship */}
       <line
-        x1={176}
-        y1={99}
-        x2={164}
-        y2={102}
+        x1={185}
+        y1={90}
+        x2={185}
+        y2={110}
         stroke="hsl(var(--primary))"
         strokeWidth={1.5}
         markerEnd="url(#arrow-rel)"
       />
-      <circle cx={180} cy={95} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={180} y={98} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+      <circle cx={185} cy={96} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={185} y={99} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
         1
       </text>
-      <circle cx={160} cy={105} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={160} y={108} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+      <circle cx={185} cy={104} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={185} y={107} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
         N
       </text>
     </svg>
