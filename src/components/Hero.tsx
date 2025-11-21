@@ -33,7 +33,7 @@ const Hero = () => {
               <Button variant="hero-secondary" size="lg" className="group" asChild>
                 <Link to="/demo-assignment">
                   <Play className="mr-2 h-4 w-4" />
-                  Play with demo assignment
+                  Demo assignment
                 </Link>
               </Button>
             </div>
