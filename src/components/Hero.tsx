@@ -70,6 +70,13 @@ const Hero = () => {
                       <filter id="shadow">
                         <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.15"/>
                       </filter>
+                      <filter id="glow">
+                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                        <feMerge>
+                          <feMergeNode in="coloredBlur"/>
+                          <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                      </filter>
                       <linearGradient id="tableGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                         <stop offset="0%" stopColor="hsl(var(--primary-light))" />
                         <stop offset="100%" stopColor="hsl(var(--background))" />
@@ -80,8 +87,66 @@ const Hero = () => {
                       </linearGradient>
                     </defs>
                     
+                    <style>{`
+                      @keyframes fadeInScale {
+                        from {
+                          opacity: 0;
+                          transform: scale(0.8);
+                        }
+                        to {
+                          opacity: 1;
+                          transform: scale(1);
+                        }
+                      }
+                      @keyframes drawLine {
+                        from {
+                          stroke-dashoffset: 100;
+                        }
+                        to {
+                          stroke-dashoffset: 0;
+                        }
+                      }
+                      @keyframes pulse {
+                        0%, 100% {
+                          opacity: 0.9;
+                        }
+                        50% {
+                          opacity: 1;
+                          filter: url(#glow);
+                        }
+                      }
+                      @keyframes float {
+                        0%, 100% {
+                          transform: translateY(0px);
+                        }
+                        50% {
+                          transform: translateY(-4px);
+                        }
+                      }
+                      .table-1 {
+                        animation: fadeInScale 0.6s ease-out 0.2s both, float 3s ease-in-out infinite;
+                      }
+                      .table-2 {
+                        animation: fadeInScale 0.6s ease-out 0.4s both, float 3s ease-in-out 0.5s infinite;
+                      }
+                      .table-3 {
+                        animation: fadeInScale 0.6s ease-out 0.6s both, float 3s ease-in-out 1s infinite;
+                      }
+                      .arrow-main {
+                        stroke-dasharray: 100;
+                        animation: drawLine 0.8s ease-out 0.8s both, pulse 2s ease-in-out 1.6s infinite;
+                      }
+                      .connection-line {
+                        stroke-dasharray: 100;
+                        animation: drawLine 0.8s ease-out 1s both;
+                      }
+                      .relationship-label {
+                        animation: fadeInScale 0.4s ease-out 1.2s both;
+                      }
+                    `}</style>
+                    
                     {/* Customers table */}
-                    <g filter="url(#shadow)">
+                    <g filter="url(#shadow)" className="table-1">
                       <rect x="15" y="15" width="110" height="75" fill="url(#tableGradient)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
                       <rect x="15" y="15" width="110" height="28" fill="hsl(var(--primary))" rx="8" />
                       <path d="M 15 43 Q 15 43, 15 43 L 125 43 Q 125 43, 125 43" fill="none" />
@@ -92,7 +157,7 @@ const Hero = () => {
                     </g>
                     
                     {/* Orders table */}
-                    <g filter="url(#shadow)">
+                    <g filter="url(#shadow)" className="table-2">
                       <rect x="195" y="15" width="110" height="75" fill="url(#tableGradient)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
                       <rect x="195" y="15" width="110" height="28" fill="hsl(var(--primary))" rx="8" />
                       <text x="250" y="34" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Orders</text>
@@ -102,11 +167,11 @@ const Hero = () => {
                     </g>
                     
                     {/* Relationship arrow */}
-                    <line x1="125" y1="52" x2="195" y2="52" stroke="hsl(var(--primary))" strokeWidth="3" markerEnd="url(#arrow)" opacity="0.9" />
-                    <text x="160" y="48" fontSize="9" fill="hsl(var(--primary))" fontWeight="600" textAnchor="middle">1:N</text>
+                    <line x1="125" y1="52" x2="195" y2="52" stroke="hsl(var(--primary))" strokeWidth="3" markerEnd="url(#arrow)" className="arrow-main" />
+                    <text x="160" y="48" fontSize="9" fill="hsl(var(--primary))" fontWeight="600" textAnchor="middle" className="relationship-label">1:N</text>
                     
                     {/* Order_Items table */}
-                    <g filter="url(#shadow)">
+                    <g filter="url(#shadow)" className="table-3">
                       <rect x="105" y="115" width="110" height="38" fill="url(#linkGradient)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="8" />
                       <rect x="105" y="115" width="110" height="20" fill="hsl(var(--secondary))" rx="8" />
                       <text x="160" y="129" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Order_Items</text>
@@ -114,8 +179,8 @@ const Hero = () => {
                     </g>
                     
                     {/* Connection lines */}
-                    <line x1="70" y1="90" x2="140" y2="115" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" />
-                    <line x1="250" y1="90" x2="180" y2="115" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" />
+                    <line x1="70" y1="90" x2="140" y2="115" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" className="connection-line" />
+                    <line x1="250" y1="90" x2="180" y2="115" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" className="connection-line" />
                   </svg>
                 </div>
               </div>
