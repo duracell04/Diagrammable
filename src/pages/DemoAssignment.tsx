@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Database, Clock, CheckCircle2, Users, ArrowLeft, Eye, MessageSquare, Star, Download } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Database, Clock, CheckCircle2, Users, ArrowLeft, Eye, MessageSquare, Star, Download, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -55,7 +59,6 @@ const DiagramPreview = () => {
 
 const DemoAssignment = () => {
   const { toast } = useToast();
-  const [expandedDashboard, setExpandedDashboard] = useState(false);
 
   const students = [
     { initials: "MC", name: "Maya Chen", status: "Submitted", lastActivity: "2h ago", timeSpent: "18m", grade: "—" },
@@ -65,11 +68,14 @@ const DemoAssignment = () => {
     { initials: "RP", name: "Riley Park", status: "Submitted", lastActivity: "4h ago", timeSpent: "31m", grade: "88" },
   ];
 
-  const handleView = (studentName: string) => {
-    toast({
-      title: "Opening submission",
-      description: `Viewing ${studentName}'s diagram...`,
-    });
+  const [selectedStudent, setSelectedStudent] = useState<typeof students[0] | null>(null);
+  const [comment, setComment] = useState("");
+  const [grade, setGrade] = useState("");
+
+  const handleView = (student: typeof students[0]) => {
+    setSelectedStudent(student);
+    setComment("");
+    setGrade(student.grade !== "—" ? student.grade : "");
   };
 
   const handleComment = (studentName: string) => {
@@ -91,6 +97,31 @@ const DemoAssignment = () => {
       title: "Exporting CSV",
       description: "Generating CSV file with all submissions...",
     });
+  };
+
+  const handleSaveAndNext = () => {
+    if (!selectedStudent) return;
+    
+    toast({
+      title: "Saved",
+      description: `Grade and feedback saved for ${selectedStudent.name}`,
+    });
+    
+    // Find next student
+    const currentIndex = students.findIndex(s => s.name === selectedStudent.name);
+    const nextStudent = students[currentIndex + 1];
+    
+    if (nextStudent) {
+      setSelectedStudent(nextStudent);
+      setComment("");
+      setGrade(nextStudent.grade !== "—" ? nextStudent.grade : "");
+    } else {
+      setSelectedStudent(null);
+      toast({
+        title: "All done!",
+        description: "You've reviewed all submissions",
+      });
+    }
   };
 
   const handleExportPNGs = () => {
@@ -180,7 +211,7 @@ const DemoAssignment = () => {
                         <Button
                           size="sm"
                           variant="ghost"
-                          onClick={() => handleView(student.name)}
+                          onClick={() => handleView(student)}
                           className="h-8 w-8 p-0"
                         >
                           <Eye className="h-4 w-4" />
@@ -321,6 +352,77 @@ const DemoAssignment = () => {
             </Card>
           </div>
         </section>
+
+        {/* Single Submission View Modal */}
+        <Dialog open={!!selectedStudent} onOpenChange={() => setSelectedStudent(null)}>
+          <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                  {selectedStudent?.initials}
+                </div>
+                <div>
+                  <div className="text-lg font-bold">{selectedStudent?.name}</div>
+                  <div className="text-sm font-normal text-muted-foreground">
+                    {selectedStudent?.status} • {selectedStudent?.timeSpent} spent
+                  </div>
+                </div>
+              </DialogTitle>
+            </DialogHeader>
+
+            <div className="space-y-6 mt-4">
+              {/* Read-only diagram */}
+              <div>
+                <Label className="text-sm font-semibold mb-2 block">Student Diagram (Read-only)</Label>
+                <div className="rounded-lg border border-border bg-muted/40 p-8 flex items-center justify-center min-h-[300px]">
+                  <DiagramPreview />
+                </div>
+              </div>
+
+              {/* Comment section */}
+              <div>
+                <Label htmlFor="comment" className="text-sm font-semibold mb-2 block">
+                  Add Comment
+                </Label>
+                <Textarea
+                  id="comment"
+                  placeholder="Good work on normalization..."
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                  className="min-h-24"
+                />
+              </div>
+
+              {/* Grade section */}
+              <div>
+                <Label htmlFor="grade" className="text-sm font-semibold mb-2 block">
+                  Grade
+                </Label>
+                <Input
+                  id="grade"
+                  type="number"
+                  min="0"
+                  max="100"
+                  placeholder="0-100"
+                  value={grade}
+                  onChange={(e) => setGrade(e.target.value)}
+                  className="max-w-32"
+                />
+              </div>
+
+              {/* Actions */}
+              <div className="flex gap-3 pt-4 border-t">
+                <Button onClick={handleSaveAndNext} className="flex-1">
+                  Save & Next
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button variant="outline" onClick={() => setSelectedStudent(null)}>
+                  Close
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </main>
   );
