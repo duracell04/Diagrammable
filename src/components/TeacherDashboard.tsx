@@ -6,7 +6,7 @@ import dashboardMock from "@/assets/dashboard-mock.jpg";
 const StudentDiagram = () => {
   return (
     <svg
-      viewBox="0 0 280 160"
+      viewBox="0 0 300 180"
       preserveAspectRatio="xMidYMid meet"
       className="max-w-full max-h-full"
     >
@@ -22,41 +22,41 @@ const StudentDiagram = () => {
           <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
         </marker>
         <filter id="shadow-teacher">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.12" />
+          <feDropShadow dx="0" dy="1" stdDeviation="2" floodOpacity="0.15" />
         </filter>
         <linearGradient id="tableGrad-teacher" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="hsl(var(--primary-light))" />
           <stop offset="100%" stopColor="hsl(var(--background))" />
         </linearGradient>
         <linearGradient id="tableGrad-teacher-junction" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="hsl(var(--secondary))" />
-          <stop offset="100%" stopColor="hsl(var(--secondary-light))" />
+          <stop offset="0%" stopColor="hsl(var(--secondary-light))" />
+          <stop offset="100%" stopColor="hsl(var(--background))" />
         </linearGradient>
       </defs>
 
-      {/* Customers table */}
+      {/* Customers table (top-left) */}
       <g filter="url(#shadow-teacher)">
         <rect
-          x={20}
+          x={15}
           y={20}
-          width={100}
-          height={70}
+          width={95}
+          height={65}
           fill="url(#tableGrad-teacher)"
           stroke="hsl(var(--primary))"
           strokeWidth={2}
           rx={6}
         />
         <rect
-          x={20}
+          x={15}
           y={20}
-          width={100}
-          height={24}
+          width={95}
+          height={22}
           fill="hsl(var(--primary))"
           rx={6}
         />
         <text
-          x={70}
-          y={36}
+          x={62.5}
+          y={35}
           fontSize={11}
           fontWeight={700}
           fill="white"
@@ -64,40 +64,40 @@ const StudentDiagram = () => {
         >
           Customers
         </text>
-        <text x={26} y={54} fontSize={9} fill="hsl(var(--foreground))" fontWeight={500}>
+        <text x={21} y={52} fontSize={9} fill="hsl(var(--foreground))" fontWeight={500}>
           🔑 customer_id
         </text>
-        <text x={26} y={66} fontSize={9} fill="hsl(var(--muted-foreground))">
+        <text x={21} y={64} fontSize={9} fill="hsl(var(--muted-foreground))">
           name
         </text>
-        <text x={26} y={78} fontSize={9} fill="hsl(var(--muted-foreground))">
+        <text x={21} y={76} fontSize={9} fill="hsl(var(--muted-foreground))">
           email
         </text>
       </g>
 
-      {/* Orders table */}
+      {/* Orders table (top-right) */}
       <g filter="url(#shadow-teacher)">
         <rect
-          x={160}
+          x={190}
           y={20}
-          width={100}
-          height={70}
+          width={95}
+          height={65}
           fill="url(#tableGrad-teacher)"
           stroke="hsl(var(--primary))"
           strokeWidth={2}
           rx={6}
         />
         <rect
-          x={160}
+          x={190}
           y={20}
-          width={100}
-          height={24}
+          width={95}
+          height={22}
           fill="hsl(var(--primary))"
           rx={6}
         />
         <text
-          x={210}
-          y={36}
+          x={237.5}
+          y={35}
           fontSize={11}
           fontWeight={700}
           fill="white"
@@ -105,59 +105,59 @@ const StudentDiagram = () => {
         >
           Orders
         </text>
-        <text x={166} y={54} fontSize={9} fill="hsl(var(--foreground))" fontWeight={500}>
+        <text x={196} y={52} fontSize={9} fill="hsl(var(--foreground))" fontWeight={500}>
           🔑 order_id
         </text>
-        <text x={166} y={66} fontSize={9} fill="hsl(var(--muted-foreground))">
+        <text x={196} y={64} fontSize={9} fill="hsl(var(--muted-foreground))">
           🔗 customer_id
         </text>
-        <text x={166} y={78} fontSize={9} fill="hsl(var(--muted-foreground))">
+        <text x={196} y={76} fontSize={9} fill="hsl(var(--muted-foreground))">
           total
         </text>
       </g>
 
-      {/* Customers 1-N Orders relationship */}
+      {/* Customers → Orders relationship (horizontal) */}
       <line
-        x1={135}
-        y1={55}
-        x2={145}
-        y2={55}
+        x1={110}
+        y1={52.5}
+        x2={190}
+        y2={52.5}
         stroke="hsl(var(--primary))"
         strokeWidth={1.5}
         markerEnd="url(#arrow-teacher)"
       />
-      <circle cx={128} cy={55} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={128} y={58} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+      <circle cx={130} cy={52.5} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={130} y={55.5} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
         1
       </text>
-      <circle cx={152} cy={55} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={152} y={58} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+      <circle cx={170} cy={52.5} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={170} y={55.5} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
         N
       </text>
 
-      {/* Order_Items junction table */}
+      {/* Order_Items table (bottom, centered below Orders) */}
       <g filter="url(#shadow-teacher)">
         <rect
-          x={90}
-          y={110}
-          width={100}
-          height={40}
+          x={192.5}
+          y={120}
+          width={90}
+          height={45}
           fill="url(#tableGrad-teacher-junction)"
           stroke="hsl(var(--secondary))"
           strokeWidth={2}
           rx={6}
         />
         <rect
-          x={90}
-          y={110}
-          width={100}
+          x={192.5}
+          y={120}
+          width={90}
           height={20}
           fill="hsl(var(--secondary))"
           rx={6}
         />
         <text
-          x={140}
-          y={123}
+          x={237.5}
+          y={133}
           fontSize={10}
           fontWeight={700}
           fill="white"
@@ -165,27 +165,27 @@ const StudentDiagram = () => {
         >
           Order_Items
         </text>
-        <text x={96} y={140} fontSize={8} fill="hsl(var(--muted-foreground))">
+        <text x={198.5} y={150} fontSize={8} fill="hsl(var(--muted-foreground))">
           🔗 order_id, product_id
         </text>
       </g>
 
-      {/* Orders 1-N Order_Items relationship */}
+      {/* Orders → Order_Items relationship (vertical) */}
       <line
-        x1={210}
-        y1={90}
-        x2={210}
-        y2={110}
+        x1={237.5}
+        y1={85}
+        x2={237.5}
+        y2={120}
         stroke="hsl(var(--primary))"
         strokeWidth={1.5}
         markerEnd="url(#arrow-teacher)"
       />
-      <circle cx={210} cy={94} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={210} y={97} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+      <circle cx={237.5} cy={93} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={237.5} y={96} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
         1
       </text>
-      <circle cx={210} cy={106} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={210} y={109} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+      <circle cx={237.5} cy={112} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={237.5} y={115} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
         N
       </text>
     </svg>
