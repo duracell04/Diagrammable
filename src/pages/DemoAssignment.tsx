@@ -125,12 +125,12 @@ const StudentDiagram = () => {
 
       {/* Customers 1-N Orders relationship */}
       <line
-        x1={120}
+        x1={135}
         y1={55}
-        x2={160}
+        x2={145}
         y2={55}
         stroke="hsl(var(--primary))"
-        strokeWidth={2}
+        strokeWidth={1.5}
         markerEnd="url(#arrow-rel)"
       />
       <circle cx={128} cy={55} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
@@ -179,12 +179,12 @@ const StudentDiagram = () => {
 
       {/* Orders 1-N Order_Items relationship */}
       <line
-        x1={185}
-        y1={90}
-        x2={155}
-        y2={110}
+        x1={176}
+        y1={99}
+        x2={164}
+        y2={102}
         stroke="hsl(var(--primary))"
-        strokeWidth={2}
+        strokeWidth={1.5}
         markerEnd="url(#arrow-rel)"
       />
       <circle cx={180} cy={95} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
