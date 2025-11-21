@@ -7,8 +7,8 @@ const DiagramPreview = ({ type }: { type: string }) => {
     return (
       <svg viewBox="0 0 260 120" preserveAspectRatio="xMidYMid meet" className="max-w-full max-h-full">
         <defs>
-          <marker id="arrow-norm" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
-            <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
+          <marker id="arrow-norm" markerWidth="4.5" markerHeight="4.5" refX="3.5" refY="2" orient="auto">
+            <polygon points="0 0, 4.5 2, 0 4" fill="hsl(var(--primary))" />
           </marker>
           <filter id="shadow-norm">
             <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.10"/>

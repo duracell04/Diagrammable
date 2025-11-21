@@ -1,138 +1,6 @@
 import { Download, Eye, MessageSquare, AlertCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import dashboardMock from "@/assets/dashboard-mock.jpg";
-
-const StudentDiagram = () => {
-  return (
-    <svg
-      viewBox="0 0 300 100"
-      preserveAspectRatio="xMidYMid meet"
-      className="max-w-full max-h-full"
-    >
-      <defs>
-        <marker
-          id="arrow-rel"
-          markerWidth="6"
-          markerHeight="6"
-          refX="5"
-          refY="2"
-          orient="auto"
-        >
-          <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
-        </marker>
-        <filter id="shadow-student">
-          <feDropShadow dx="0" dy="1" stdDeviation="2" floodOpacity="0.15" />
-        </filter>
-        <linearGradient id="tableGrad-student" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="hsl(var(--primary-light))" />
-          <stop offset="100%" stopColor="hsl(var(--background))" />
-        </linearGradient>
-      </defs>
-
-      {/* Customers table */}
-      <g filter="url(#shadow-student)">
-        <rect
-          x={15}
-          y={20}
-          width={95}
-          height={65}
-          fill="url(#tableGrad-student)"
-          stroke="hsl(var(--primary))"
-          strokeWidth={2}
-          rx={6}
-        />
-        <rect
-          x={15}
-          y={20}
-          width={95}
-          height={22}
-          fill="hsl(var(--primary))"
-          rx={6}
-        />
-        <text
-          x={62.5}
-          y={35}
-          fontSize={11}
-          fontWeight={700}
-          fill="white"
-          textAnchor="middle"
-        >
-          Customers
-        </text>
-        <text x={21} y={52} fontSize={9} fill="hsl(var(--foreground))" fontWeight={500}>
-          🔑 customer_id
-        </text>
-        <text x={21} y={64} fontSize={9} fill="hsl(var(--muted-foreground))">
-          name
-        </text>
-        <text x={21} y={76} fontSize={9} fill="hsl(var(--muted-foreground))">
-          email
-        </text>
-      </g>
-
-      {/* Orders table */}
-      <g filter="url(#shadow-student)">
-        <rect
-          x={190}
-          y={20}
-          width={95}
-          height={65}
-          fill="url(#tableGrad-student)"
-          stroke="hsl(var(--primary))"
-          strokeWidth={2}
-          rx={6}
-        />
-        <rect
-          x={190}
-          y={20}
-          width={95}
-          height={22}
-          fill="hsl(var(--primary))"
-          rx={6}
-        />
-        <text
-          x={237.5}
-          y={35}
-          fontSize={11}
-          fontWeight={700}
-          fill="white"
-          textAnchor="middle"
-        >
-          Orders
-        </text>
-        <text x={196} y={52} fontSize={9} fill="hsl(var(--foreground))" fontWeight={500}>
-          🔑 order_id
-        </text>
-        <text x={196} y={64} fontSize={9} fill="hsl(var(--muted-foreground))">
-          🔗 customer_id
-        </text>
-        <text x={196} y={76} fontSize={9} fill="hsl(var(--muted-foreground))">
-          total
-        </text>
-      </g>
-
-      {/* Customers → Orders relationship */}
-      <line
-        x1={110}
-        y1={52.5}
-        x2={190}
-        y2={52.5}
-        stroke="hsl(var(--primary))"
-        strokeWidth={1.5}
-        markerEnd="url(#arrow-rel)"
-      />
-      <circle cx={130} cy={52.5} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={130} y={55.5} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
-        1
-      </text>
-      <circle cx={170} cy={52.5} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={170} y={55.5} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
-        N
-      </text>
-    </svg>
-  );
-};
 
 const TeacherDashboard = () => {
   const submissions = [
@@ -253,7 +121,9 @@ const TeacherDashboard = () => {
             <div className="rounded-lg border border-border bg-card p-6">
               <h4 className="font-semibold mb-4 text-sm">Single Submission View</h4>
               <div className="aspect-video bg-muted rounded border border-border flex items-center justify-center p-4">
-                <StudentDiagram />
+                <p className="text-sm text-muted-foreground text-center">
+                  The student&apos;s diagram will be visible here.
+                </p>
               </div>
             </div>
           </div>
@@ -288,3 +158,4 @@ const TeacherDashboard = () => {
 };
 
 export default TeacherDashboard;
+
