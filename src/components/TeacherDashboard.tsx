@@ -6,9 +6,9 @@ import dashboardMock from "@/assets/dashboard-mock.jpg";
 const StudentDiagram = () => {
   return (
     <svg
-      viewBox="0 0 320 180"
+      viewBox="0 0 280 160"
       preserveAspectRatio="xMidYMid meet"
-      className="w-full h-full"
+      className="max-w-full max-h-full"
     >
       <defs>
         <marker
@@ -22,12 +22,7 @@ const StudentDiagram = () => {
           <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
         </marker>
         <filter id="shadow-teacher">
-          <feDropShadow
-            dx="0"
-            dy="2"
-            stdDeviation="2"
-            floodOpacity="0.12"
-          />
+          <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.12" />
         </filter>
         <linearGradient id="tableGrad-teacher" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="hsl(var(--primary-light))" />
@@ -39,254 +34,160 @@ const StudentDiagram = () => {
         </linearGradient>
       </defs>
 
-      <g transform="translate(160, 90) scale(0.9) translate(-160, -90)">
-        {/* Relationships */}
-        <line
-          x1={95}
-          y1={70}
-          x2={160}
-          y2={70}
+      {/* Customers table */}
+      <g filter="url(#shadow-teacher)">
+        <rect
+          x={20}
+          y={20}
+          width={100}
+          height={70}
+          fill="url(#tableGrad-teacher)"
           stroke="hsl(var(--primary))"
           strokeWidth={2}
-          markerEnd="url(#arrow-teacher)"
+          rx={6}
         />
-        <circle
-          cx={110}
-          cy={62}
-          r={9}
-          fill="hsl(var(--background))"
-          stroke="hsl(var(--primary))"
-          strokeWidth={2}
+        <rect
+          x={20}
+          y={20}
+          width={100}
+          height={24}
+          fill="hsl(var(--primary))"
+          rx={6}
         />
         <text
-          x={110}
-          y={66}
-          fontSize={10}
+          x={70}
+          y={36}
+          fontSize={11}
           fontWeight={700}
-          fill="hsl(var(--primary))"
+          fill="white"
           textAnchor="middle"
         >
-          1
+          Customers
         </text>
-        <circle
-          cx={145}
-          cy={62}
-          r={9}
-          fill="hsl(var(--background))"
-          stroke="hsl(var(--primary))"
-          strokeWidth={2}
-        />
-        <text
-          x={145}
-          y={66}
-          fontSize={10}
-          fontWeight={700}
-          fill="hsl(var(--primary))"
-          textAnchor="middle"
-        >
-          N
+        <text x={26} y={54} fontSize={9} fill="hsl(var(--foreground))" fontWeight={500}>
+          🔑 customer_id
         </text>
-
-        <line
-          x1={205}
-          y1={95}
-          x2={205}
-          y2={132}
-          stroke="hsl(var(--primary))"
-          strokeWidth={2}
-          markerEnd="url(#arrow-teacher)"
-        />
-        <circle
-          cx={197}
-          cy={110}
-          r={9}
-          fill="hsl(var(--background))"
-          stroke="hsl(var(--primary))"
-          strokeWidth={2}
-        />
-        <text
-          x={197}
-          y={114}
-          fontSize={10}
-          fontWeight={700}
-          fill="hsl(var(--primary))"
-          textAnchor="middle"
-        >
-          1
+        <text x={26} y={66} fontSize={9} fill="hsl(var(--muted-foreground))">
+          name
         </text>
-        <circle
-          cx={197}
-          cy={129}
-          r={9}
-          fill="hsl(var(--background))"
-          stroke="hsl(var(--primary))"
-          strokeWidth={2}
-        />
-        <text
-          x={197}
-          y={133}
-          fontSize={10}
-          fontWeight={700}
-          fill="hsl(var(--primary))"
-          textAnchor="middle"
-        >
-          N
+        <text x={26} y={78} fontSize={9} fill="hsl(var(--muted-foreground))">
+          email
         </text>
-
-        {/* Customers table */}
-        <g filter="url(#shadow-teacher)">
-          <rect
-            x={25}
-            y={40}
-            width={120}
-            height={80}
-            fill="url(#tableGrad-teacher)"
-            stroke="hsl(var(--primary))"
-            strokeWidth={2.5}
-            rx={8}
-          />
-          <rect
-            x={25}
-            y={40}
-            width={120}
-            height={30}
-            fill="hsl(var(--primary))"
-            rx={8}
-          />
-          <text
-            x={85}
-            y={59}
-            fontSize={13}
-            fontWeight={700}
-            fill="white"
-            textAnchor="middle"
-          >
-            Customers
-          </text>
-          <text
-            x={32}
-            y={80}
-            fontSize={10}
-            fill="hsl(var(--foreground))"
-            fontWeight={500}
-          >
-            🔑 customer_id
-          </text>
-          <text
-            x={32}
-            y={94}
-            fontSize={10}
-            fill="hsl(var(--muted-foreground))"
-          >
-            name
-          </text>
-          <text
-            x={32}
-            y={108}
-            fontSize={10}
-            fill="hsl(var(--muted-foreground))"
-          >
-            email
-          </text>
-        </g>
-
-        {/* Orders table */}
-        <g filter="url(#shadow-teacher)">
-          <rect
-            x={160}
-            y={40}
-            width={120}
-            height={80}
-            fill="url(#tableGrad-teacher)"
-            stroke="hsl(var(--primary))"
-            strokeWidth={2.5}
-            rx={8}
-          />
-          <rect
-            x={160}
-            y={40}
-            width={120}
-            height={30}
-            fill="hsl(var(--primary))"
-            rx={8}
-          />
-          <text
-            x={220}
-            y={59}
-            fontSize={13}
-            fontWeight={700}
-            fill="white"
-            textAnchor="middle"
-          >
-            Orders
-          </text>
-          <text
-            x={168}
-            y={80}
-            fontSize={10}
-            fill="hsl(var(--foreground))"
-            fontWeight={500}
-          >
-            🔑 order_id
-          </text>
-          <text
-            x={168}
-            y={94}
-            fontSize={10}
-            fill="hsl(var(--muted-foreground))"
-          >
-            🔗 customer_id
-          </text>
-          <text
-            x={168}
-            y={108}
-            fontSize={10}
-            fill="hsl(var(--muted-foreground))"
-          >
-            total
-          </text>
-        </g>
-
-        {/* Order_Items junction table */}
-        <g filter="url(#shadow-teacher)">
-          <rect
-            x={120}
-            y={120}
-            width={150}
-            height={50}
-            fill="url(#tableGrad-teacher-junction)"
-            stroke="hsl(var(--secondary))"
-            strokeWidth={2.5}
-            rx={8}
-          />
-          <rect
-            x={120}
-            y={120}
-            width={150}
-            height={22}
-            fill="hsl(var(--secondary))"
-            rx={8}
-          />
-          <text
-            x={195}
-            y={135}
-            fontSize={12}
-            fontWeight={700}
-            fill="white"
-            textAnchor="middle"
-          >
-            Order_Items
-          </text>
-          <text
-            x={127}
-            y={152}
-            fontSize={10}
-            fill="hsl(var(--muted-foreground))"
-          >
-            🔗 order_id, product_id
-          </text>
-        </g>
       </g>
+
+      {/* Orders table */}
+      <g filter="url(#shadow-teacher)">
+        <rect
+          x={160}
+          y={20}
+          width={100}
+          height={70}
+          fill="url(#tableGrad-teacher)"
+          stroke="hsl(var(--primary))"
+          strokeWidth={2}
+          rx={6}
+        />
+        <rect
+          x={160}
+          y={20}
+          width={100}
+          height={24}
+          fill="hsl(var(--primary))"
+          rx={6}
+        />
+        <text
+          x={210}
+          y={36}
+          fontSize={11}
+          fontWeight={700}
+          fill="white"
+          textAnchor="middle"
+        >
+          Orders
+        </text>
+        <text x={166} y={54} fontSize={9} fill="hsl(var(--foreground))" fontWeight={500}>
+          🔑 order_id
+        </text>
+        <text x={166} y={66} fontSize={9} fill="hsl(var(--muted-foreground))">
+          🔗 customer_id
+        </text>
+        <text x={166} y={78} fontSize={9} fill="hsl(var(--muted-foreground))">
+          total
+        </text>
+      </g>
+
+      {/* Customers 1-N Orders relationship */}
+      <line
+        x1={120}
+        y1={55}
+        x2={160}
+        y2={55}
+        stroke="hsl(var(--primary))"
+        strokeWidth={2}
+        markerEnd="url(#arrow-teacher)"
+      />
+      <circle cx={128} cy={55} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={128} y={58} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+        1
+      </text>
+      <circle cx={152} cy={55} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={152} y={58} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+        N
+      </text>
+
+      {/* Order_Items junction table */}
+      <g filter="url(#shadow-teacher)">
+        <rect
+          x={90}
+          y={110}
+          width={100}
+          height={40}
+          fill="url(#tableGrad-teacher-junction)"
+          stroke="hsl(var(--secondary))"
+          strokeWidth={2}
+          rx={6}
+        />
+        <rect
+          x={90}
+          y={110}
+          width={100}
+          height={20}
+          fill="hsl(var(--secondary))"
+          rx={6}
+        />
+        <text
+          x={140}
+          y={123}
+          fontSize={10}
+          fontWeight={700}
+          fill="white"
+          textAnchor="middle"
+        >
+          Order_Items
+        </text>
+        <text x={96} y={140} fontSize={8} fill="hsl(var(--muted-foreground))">
+          🔗 order_id, product_id
+        </text>
+      </g>
+
+      {/* Orders 1-N Order_Items relationship */}
+      <line
+        x1={185}
+        y1={90}
+        x2={155}
+        y2={110}
+        stroke="hsl(var(--primary))"
+        strokeWidth={2}
+        markerEnd="url(#arrow-teacher)"
+      />
+      <circle cx={180} cy={95} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={180} y={98} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+        1
+      </text>
+      <circle cx={160} cy={105} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={160} y={108} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+        N
+      </text>
     </svg>
   );
 };
