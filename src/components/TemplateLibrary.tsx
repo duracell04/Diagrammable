@@ -50,13 +50,13 @@ const DiagramPreview = ({ type }: { type: string }) => {
   
   if (type === "systems-cache") {
     return (
-      <svg viewBox="0 0 280 120" className="w-full h-auto">
+      <svg viewBox="0 0 260 100" className="w-full h-auto">
         <defs>
-          <marker id="arrow-cache" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
-            <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
+          <marker id="arrow-cache" markerWidth="4" markerHeight="4" refX="3.5" refY="1.5" orient="auto">
+            <polygon points="0 0, 4 1.5, 0 3" fill="hsl(var(--primary))" />
           </marker>
-          <marker id="arrow-cache-back" markerWidth="6" markerHeight="6" refX="1" refY="2" orient="auto">
-            <polygon points="6 0, 0 2, 6 4" fill="hsl(var(--primary))" />
+          <marker id="arrow-cache-back" markerWidth="4" markerHeight="4" refX="0.5" refY="1.5" orient="auto">
+            <polygon points="4 0, 0 1.5, 4 3" fill="hsl(var(--primary))" />
           </marker>
           <filter id="shadow-cache">
             <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.15"/>
@@ -71,22 +71,22 @@ const DiagramPreview = ({ type }: { type: string }) => {
           </linearGradient>
         </defs>
         
-        <line x1="75" y1="60" x2="95" y2="60" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-cache)" markerStart="url(#arrow-cache-back)" />
-        <line x1="165" y1="60" x2="185" y2="60" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-cache)" markerStart="url(#arrow-cache-back)" />
+        <line x1="65" y1="50" x2="85" y2="50" stroke="hsl(var(--primary))" strokeWidth="1.5" markerEnd="url(#arrow-cache)" markerStart="url(#arrow-cache-back)" />
+        <line x1="155" y1="50" x2="175" y2="50" stroke="hsl(var(--primary))" strokeWidth="1.5" markerEnd="url(#arrow-cache)" markerStart="url(#arrow-cache-back)" />
         
         <g filter="url(#shadow-cache)">
-          <rect x="15" y="35" width="60" height="50" fill="url(#primaryGrad-cache)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="10" />
-          <text x="45" y="64" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Client</text>
+          <rect x="15" y="25" width="50" height="50" fill="url(#primaryGrad-cache)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="10" />
+          <text x="40" y="54" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Client</text>
         </g>
         
         <g filter="url(#shadow-cache)">
-          <rect x="95" y="35" width="70" height="50" fill="url(#secondaryGrad-cache)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
-          <text x="130" y="64" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Cache</text>
+          <rect x="85" y="25" width="70" height="50" fill="url(#secondaryGrad-cache)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+          <text x="120" y="54" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Cache</text>
         </g>
         
         <g filter="url(#shadow-cache)">
-          <rect x="185" y="35" width="60" height="50" fill="hsl(var(--muted))" stroke="hsl(var(--muted-foreground))" strokeWidth="2.5" strokeDasharray="4,3" rx="10" opacity="0.7" />
-          <text x="215" y="64" fontSize="12" fontWeight="700" fill="hsl(var(--muted-foreground))" textAnchor="middle">DB?</text>
+          <rect x="175" y="25" width="60" height="50" fill="hsl(var(--muted))" stroke="hsl(var(--muted-foreground))" strokeWidth="2.5" strokeDasharray="4,3" rx="10" opacity="0.7" />
+          <text x="205" y="54" fontSize="11" fontWeight="700" fill="hsl(var(--muted-foreground))" textAnchor="middle">DB?</text>
         </g>
       </svg>
     );
