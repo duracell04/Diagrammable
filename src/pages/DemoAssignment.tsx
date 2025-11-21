@@ -179,20 +179,20 @@ const StudentDiagram = () => {
 
       {/* Orders 1-N Order_Items relationship */}
       <line
-        x1={185}
+        x1={210}
         y1={90}
-        x2={185}
+        x2={210}
         y2={110}
         stroke="hsl(var(--primary))"
         strokeWidth={1.5}
         markerEnd="url(#arrow-rel)"
       />
-      <circle cx={185} cy={96} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={185} y={99} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+      <circle cx={210} cy={94} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={210} y={97} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
         1
       </text>
-      <circle cx={185} cy={104} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={185} y={107} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
+      <circle cx={210} cy={106} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
+      <text x={210} y={109} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
         N
       </text>
     </svg>
