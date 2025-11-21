@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import DemoAssignment from "./pages/DemoAssignment";
 import UserManual from "./pages/UserManual";
+import Waitlist from "./pages/Waitlist";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/demo-assignment" element={<DemoAssignment />} />
           <Route path="/user-manual" element={<UserManual />} />
+          <Route path="/waitlist" element={<Waitlist />} />
+          <Route path="/signin" element={<Waitlist />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

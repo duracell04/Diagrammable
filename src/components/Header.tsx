@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -22,11 +23,11 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm">
-            Sign In
+          <Button variant="ghost" size="sm" asChild>
+            <Link to="/signin">Sign In</Link>
           </Button>
-          <Button variant="hero" size="sm">
-            Start Free Trial
+          <Button variant="hero" size="sm" asChild>
+            <Link to="/waitlist">Start Free Trial</Link>
           </Button>
         </div>
       </div>
