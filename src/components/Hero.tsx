@@ -61,33 +61,61 @@ const Hero = () => {
                 </div>
                 
                 {/* Diagram Preview */}
-                <div className="bg-background rounded-lg p-4 border border-border">
-                  <svg viewBox="0 0 300 140" className="w-full h-auto">
-                    {/* Customers table */}
-                    <rect x="20" y="20" width="100" height="60" fill="hsl(var(--primary-light))" stroke="hsl(var(--primary))" strokeWidth="2" rx="6" />
-                    <text x="70" y="40" fontSize="12" fontWeight="600" fill="hsl(var(--primary))" textAnchor="middle">Customers</text>
-                    <text x="28" y="55" fontSize="9" fill="hsl(var(--muted-foreground))">• customer_id</text>
-                    <text x="28" y="67" fontSize="9" fill="hsl(var(--muted-foreground))">• name</text>
-                    <text x="28" y="79" fontSize="9" fill="hsl(var(--muted-foreground))">• email</text>
-                    
-                    {/* Orders table */}
-                    <rect x="180" y="20" width="100" height="60" fill="hsl(var(--primary-light))" stroke="hsl(var(--primary))" strokeWidth="2" rx="6" />
-                    <text x="230" y="40" fontSize="12" fontWeight="600" fill="hsl(var(--primary))" textAnchor="middle">Orders</text>
-                    <text x="188" y="55" fontSize="9" fill="hsl(var(--muted-foreground))">• order_id</text>
-                    <text x="188" y="67" fontSize="9" fill="hsl(var(--muted-foreground))">• customer_id</text>
-                    <text x="188" y="79" fontSize="9" fill="hsl(var(--muted-foreground))">• total</text>
-                    
-                    {/* Relationship arrow */}
-                    <line x1="120" y1="50" x2="180" y2="50" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow)" />
+                <div className="bg-gradient-to-br from-background to-muted rounded-lg p-6 border border-border">
+                  <svg viewBox="0 0 320 160" className="w-full h-auto">
                     <defs>
                       <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
                         <polygon points="0 0, 10 3, 0 6" fill="hsl(var(--primary))" />
                       </marker>
+                      <filter id="shadow">
+                        <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.15"/>
+                      </filter>
+                      <linearGradient id="tableGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="hsl(var(--primary-light))" />
+                        <stop offset="100%" stopColor="hsl(var(--background))" />
+                      </linearGradient>
+                      <linearGradient id="linkGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="hsl(var(--secondary-light))" />
+                        <stop offset="100%" stopColor="hsl(var(--background))" />
+                      </linearGradient>
                     </defs>
                     
-                    {/* Items table */}
-                    <rect x="100" y="100" width="100" height="30" fill="hsl(var(--secondary-light))" stroke="hsl(var(--secondary))" strokeWidth="2" rx="6" />
-                    <text x="150" y="120" fontSize="11" fontWeight="600" fill="hsl(var(--secondary))" textAnchor="middle">Order_Items</text>
+                    {/* Customers table */}
+                    <g filter="url(#shadow)">
+                      <rect x="15" y="15" width="110" height="75" fill="url(#tableGradient)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
+                      <rect x="15" y="15" width="110" height="28" fill="hsl(var(--primary))" rx="8" />
+                      <path d="M 15 43 Q 15 43, 15 43 L 125 43 Q 125 43, 125 43" fill="none" />
+                      <text x="70" y="34" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Customers</text>
+                      <text x="23" y="58" fontSize="10" fill="hsl(var(--foreground))" fontWeight="500">🔑 customer_id</text>
+                      <text x="23" y="72" fontSize="10" fill="hsl(var(--muted-foreground))">   name</text>
+                      <text x="23" y="86" fontSize="10" fill="hsl(var(--muted-foreground))">   email</text>
+                    </g>
+                    
+                    {/* Orders table */}
+                    <g filter="url(#shadow)">
+                      <rect x="195" y="15" width="110" height="75" fill="url(#tableGradient)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
+                      <rect x="195" y="15" width="110" height="28" fill="hsl(var(--primary))" rx="8" />
+                      <text x="250" y="34" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Orders</text>
+                      <text x="203" y="58" fontSize="10" fill="hsl(var(--foreground))" fontWeight="500">🔑 order_id</text>
+                      <text x="203" y="72" fontSize="10" fill="hsl(var(--muted-foreground))">🔗 customer_id</text>
+                      <text x="203" y="86" fontSize="10" fill="hsl(var(--muted-foreground))">   total</text>
+                    </g>
+                    
+                    {/* Relationship arrow */}
+                    <line x1="125" y1="52" x2="195" y2="52" stroke="hsl(var(--primary))" strokeWidth="3" markerEnd="url(#arrow)" opacity="0.9" />
+                    <text x="160" y="48" fontSize="9" fill="hsl(var(--primary))" fontWeight="600" textAnchor="middle">1:N</text>
+                    
+                    {/* Order_Items table */}
+                    <g filter="url(#shadow)">
+                      <rect x="105" y="115" width="110" height="38" fill="url(#linkGradient)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="8" />
+                      <rect x="105" y="115" width="110" height="20" fill="hsl(var(--secondary))" rx="8" />
+                      <text x="160" y="129" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Order_Items</text>
+                      <text x="113" y="147" fontSize="9" fill="hsl(var(--muted-foreground))">🔗 order_id, product_id</text>
+                    </g>
+                    
+                    {/* Connection lines */}
+                    <line x1="70" y1="90" x2="140" y2="115" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" />
+                    <line x1="250" y1="90" x2="180" y2="115" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" />
                   </svg>
                 </div>
               </div>
