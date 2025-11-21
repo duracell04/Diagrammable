@@ -166,10 +166,7 @@ const Hero = () => {
                       <text x="203" y="86" fontSize="10" fill="hsl(var(--muted-foreground))">   total</text>
                     </g>
                     
-                    {/* Relationship arrow */}
-                    <line x1="132" y1="52" x2="188" y2="52" stroke="hsl(var(--primary))" strokeWidth="5" markerEnd="url(#arrow)" className="arrow-main" />
-                    
-                    {/* Cardinality labels on arrow */}
+                    {/* Cardinality labels */}
                     <g className="relationship-label">
                       <circle cx="140" cy="52" r="10" fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth="2" />
                       <text x="140" y="56" fontSize="10" fontWeight="700" fill="hsl(var(--primary))" textAnchor="middle">1</text>
@@ -177,6 +174,9 @@ const Hero = () => {
                       <circle cx="180" cy="52" r="10" fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth="2" />
                       <text x="180" y="56" fontSize="10" fontWeight="700" fill="hsl(var(--primary))" textAnchor="middle">N</text>
                     </g>
+                    
+                    {/* Relationship arrow - positioned between the badges */}
+                    <line x1="150" y1="52" x2="170" y2="52" stroke="hsl(var(--primary))" strokeWidth="5" markerEnd="url(#arrow)" className="arrow-main" />
                     
                     {/* Order_Items table */}
                     <g filter="url(#shadow)" className="table-3">
