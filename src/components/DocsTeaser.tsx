@@ -1,6 +1,7 @@
 import { GitBranch, ArrowRight, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 const DocsTeaser = () => {
   return (
@@ -84,9 +85,11 @@ const DocsTeaser = () => {
             Source of truth stays in Git. Your docs stay accurate. Perfect for DevRel teams, engineering docs, 
             and agencies managing technical content.
           </p>
-          <Button variant="hero" size="lg">
-            Join Docs Early Access
-            <ArrowRight className="ml-2 h-4 w-4" />
+          <Button variant="hero" size="lg" asChild>
+            <Link to="/waitlist">
+              Join Docs Early Access
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </div>
