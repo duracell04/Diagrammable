@@ -13,7 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 const StudentDiagram = () => {
   return (
     <svg
-      viewBox="0 0 300 180"
+      viewBox="0 0 300 100"
       preserveAspectRatio="xMidYMid meet"
       className="max-w-full max-h-full"
     >
@@ -35,13 +35,9 @@ const StudentDiagram = () => {
           <stop offset="0%" stopColor="hsl(var(--primary-light))" />
           <stop offset="100%" stopColor="hsl(var(--background))" />
         </linearGradient>
-        <linearGradient id="tableGrad-junction" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="hsl(var(--secondary-light))" />
-          <stop offset="100%" stopColor="hsl(var(--background))" />
-        </linearGradient>
       </defs>
 
-      {/* Customers table (top-left) */}
+      {/* Customers table */}
       <g filter="url(#shadow-student)">
         <rect
           x={15}
@@ -82,7 +78,7 @@ const StudentDiagram = () => {
         </text>
       </g>
 
-      {/* Orders table (top-right) */}
+      {/* Orders table */}
       <g filter="url(#shadow-student)">
         <rect
           x={190}
@@ -123,7 +119,7 @@ const StudentDiagram = () => {
         </text>
       </g>
 
-      {/* Customers → Orders relationship (horizontal) */}
+      {/* Customers → Orders relationship */}
       <line
         x1={110}
         y1={52.5}
@@ -139,60 +135,6 @@ const StudentDiagram = () => {
       </text>
       <circle cx={170} cy={52.5} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
       <text x={170} y={55.5} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
-        N
-      </text>
-
-      {/* Order_Items table (bottom, centered below Orders) */}
-      <g filter="url(#shadow-student)">
-        <rect
-          x={192.5}
-          y={120}
-          width={90}
-          height={45}
-          fill="url(#tableGrad-junction)"
-          stroke="hsl(var(--secondary))"
-          strokeWidth={2}
-          rx={6}
-        />
-        <rect
-          x={192.5}
-          y={120}
-          width={90}
-          height={20}
-          fill="hsl(var(--secondary))"
-          rx={6}
-        />
-        <text
-          x={237.5}
-          y={133}
-          fontSize={10}
-          fontWeight={700}
-          fill="white"
-          textAnchor="middle"
-        >
-          Order_Items
-        </text>
-        <text x={198.5} y={150} fontSize={8} fill="hsl(var(--muted-foreground))">
-          🔗 order_id, product_id
-        </text>
-      </g>
-
-      {/* Orders → Order_Items relationship (vertical) */}
-      <line
-        x1={237.5}
-        y1={85}
-        x2={237.5}
-        y2={120}
-        stroke="hsl(var(--primary))"
-        strokeWidth={1.5}
-        markerEnd="url(#arrow-rel)"
-      />
-      <circle cx={237.5} cy={93} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={237.5} y={96} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
-        1
-      </text>
-      <circle cx={237.5} cy={112} r={7} fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth={1.5} />
-      <text x={237.5} y={115} fontSize={9} fontWeight={700} fill="hsl(var(--primary))" textAnchor="middle">
         N
       </text>
     </svg>
