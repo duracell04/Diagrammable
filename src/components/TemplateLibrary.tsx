@@ -50,7 +50,7 @@ const DiagramPreview = ({ type }: { type: string }) => {
   
   if (type === "systems-cache") {
     return (
-      <svg viewBox="0 0 320 160" className="w-full h-auto">
+      <svg viewBox="0 0 280 140" className="w-full h-auto">
         <defs>
           <marker id="arrow-cache" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
             <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
@@ -69,28 +69,24 @@ const DiagramPreview = ({ type }: { type: string }) => {
             <stop offset="0%" stopColor="hsl(var(--secondary))" />
             <stop offset="100%" stopColor="hsl(var(--secondary-light))" />
           </linearGradient>
-          <linearGradient id="mutedGrad-cache" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="hsl(var(--muted))" />
-            <stop offset="100%" stopColor="hsl(var(--background))" />
-          </linearGradient>
         </defs>
         
-        <line x1="100" y1="80" x2="120" y2="80" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-cache)" markerStart="url(#arrow-cache-back)" />
-        <line x1="200" y1="80" x2="220" y2="80" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-cache)" markerStart="url(#arrow-cache-back)" />
+        <line x1="75" y1="70" x2="95" y2="70" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-cache)" markerStart="url(#arrow-cache-back)" />
+        <line x1="165" y1="70" x2="185" y2="70" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-cache)" markerStart="url(#arrow-cache-back)" />
         
         <g filter="url(#shadow-cache)">
-          <rect x="20" y="50" width="80" height="60" fill="url(#primaryGrad-cache)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="12" />
-          <text x="60" y="84" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Client</text>
+          <rect x="15" y="45" width="60" height="50" fill="url(#primaryGrad-cache)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="10" />
+          <text x="45" y="74" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Client</text>
         </g>
         
         <g filter="url(#shadow-cache)">
-          <rect x="120" y="50" width="80" height="60" fill="url(#secondaryGrad-cache)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="12" />
-          <text x="160" y="84" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Cache</text>
+          <rect x="95" y="45" width="70" height="50" fill="url(#secondaryGrad-cache)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+          <text x="130" y="74" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Cache</text>
         </g>
         
         <g filter="url(#shadow-cache)">
-          <rect x="220" y="50" width="80" height="60" fill="url(#mutedGrad-cache)" stroke="hsl(var(--muted-foreground))" strokeWidth="2.5" rx="12" />
-          <text x="260" y="84" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">DB</text>
+          <rect x="185" y="45" width="60" height="50" fill="hsl(var(--muted))" stroke="hsl(var(--muted-foreground))" strokeWidth="2.5" strokeDasharray="4,3" rx="10" opacity="0.7" />
+          <text x="215" y="74" fontSize="12" fontWeight="700" fill="hsl(var(--muted-foreground))" textAnchor="middle">DB?</text>
         </g>
       </svg>
     );
@@ -98,7 +94,7 @@ const DiagramPreview = ({ type }: { type: string }) => {
   
   if (type === "database-ecommerce") {
     return (
-      <svg viewBox="0 0 320 180" className="w-full h-auto">
+      <svg viewBox="0 0 280 140" className="w-full h-auto">
         <defs>
           <marker id="arrow-ecom" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
             <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
@@ -110,55 +106,42 @@ const DiagramPreview = ({ type }: { type: string }) => {
             <stop offset="0%" stopColor="hsl(var(--primary-light))" />
             <stop offset="100%" stopColor="hsl(var(--background))" />
           </linearGradient>
-          <linearGradient id="linkGrad-ecom" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="hsl(var(--secondary-light))" />
-            <stop offset="100%" stopColor="hsl(var(--background))" />
-          </linearGradient>
         </defs>
         
         <g filter="url(#shadow-ecom)">
-          <rect x="15" y="15" width="90" height="61" fill="url(#tableGrad-ecom)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
-          <rect x="15" y="15" width="90" height="25" fill="hsl(var(--primary))" rx="8" />
-          <text x="60" y="32" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Products</text>
-          <text x="23" y="52" fontSize="9" fill="hsl(var(--foreground))" fontWeight="500">🔑 product_id</text>
-          <text x="23" y="63" fontSize="9" fill="hsl(var(--muted-foreground))">   name</text>
-          <text x="23" y="74" fontSize="9" fill="hsl(var(--muted-foreground))">   price</text>
+          <rect x="15" y="15" width="75" height="48" fill="url(#tableGrad-ecom)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
+          <rect x="15" y="15" width="75" height="22" fill="hsl(var(--primary))" rx="8" />
+          <text x="52" y="30" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Products</text>
+          <text x="20" y="48" fontSize="8" fill="hsl(var(--foreground))" fontWeight="500">🔑 product_id</text>
+          <text x="20" y="58" fontSize="8" fill="hsl(var(--muted-foreground))">   name, price</text>
         </g>
         
         <g filter="url(#shadow-ecom)">
-          <rect x="115" y="15" width="90" height="61" fill="url(#tableGrad-ecom)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
-          <rect x="115" y="15" width="90" height="25" fill="hsl(var(--primary))" rx="8" />
-          <text x="160" y="32" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Orders</text>
-          <text x="123" y="52" fontSize="9" fill="hsl(var(--foreground))" fontWeight="500">🔑 order_id</text>
-          <text x="123" y="63" fontSize="9" fill="hsl(var(--muted-foreground))">🔗 user_id</text>
+          <rect x="105" y="15" width="75" height="48" fill="url(#tableGrad-ecom)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
+          <rect x="105" y="15" width="75" height="22" fill="hsl(var(--primary))" rx="8" />
+          <text x="142" y="30" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Orders</text>
+          <text x="110" y="48" fontSize="8" fill="hsl(var(--foreground))" fontWeight="500">🔑 order_id</text>
+          <text x="110" y="58" fontSize="8" fill="hsl(var(--muted-foreground))">🔗 user_id</text>
         </g>
         
         <g filter="url(#shadow-ecom)">
-          <rect x="215" y="15" width="90" height="61" fill="url(#tableGrad-ecom)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
-          <rect x="215" y="15" width="90" height="25" fill="hsl(var(--primary))" rx="8" />
-          <text x="260" y="32" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Users</text>
-          <text x="223" y="52" fontSize="9" fill="hsl(var(--foreground))" fontWeight="500">🔑 user_id</text>
-          <text x="223" y="63" fontSize="9" fill="hsl(var(--muted-foreground))">   email</text>
+          <rect x="195" y="15" width="70" height="48" fill="url(#tableGrad-ecom)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
+          <rect x="195" y="15" width="70" height="22" fill="hsl(var(--primary))" rx="8" />
+          <text x="230" y="30" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Users</text>
+          <text x="200" y="48" fontSize="8" fill="hsl(var(--foreground))" fontWeight="500">🔑 user_id</text>
+          <text x="200" y="58" fontSize="8" fill="hsl(var(--muted-foreground))">   email</text>
         </g>
         
-        <line x1="205" y1="45" x2="215" y2="45" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-ecom)" />
+        <line x1="180" y1="39" x2="195" y2="39" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-ecom)" />
         
-        <g filter="url(#shadow-ecom)">
-          <rect x="105" y="95" width="110" height="38" fill="url(#linkGrad-ecom)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="8" />
-          <rect x="105" y="95" width="110" height="20" fill="hsl(var(--secondary))" rx="8" />
-          <text x="160" y="109" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Order_Items</text>
-          <text x="113" y="127" fontSize="9" fill="hsl(var(--muted-foreground))">🔗 order_id, product_id</text>
-        </g>
-        
-        <line x1="70" y1="76" x2="140" y2="95" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" />
-        <line x1="180" y1="76" x2="180" y2="95" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" />
+        <text x="140" y="90" fontSize="10" fill="hsl(var(--muted-foreground))" textAnchor="middle" fontStyle="italic">+ Order_Items junction table</text>
       </svg>
     );
   }
   
   if (type === "systems-microservices") {
     return (
-      <svg viewBox="0 0 320 140" className="w-full h-auto">
+      <svg viewBox="0 0 240 110" className="w-full h-auto">
         <defs>
           <marker id="arrow-micro" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
             <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
@@ -176,28 +159,28 @@ const DiagramPreview = ({ type }: { type: string }) => {
           </linearGradient>
         </defs>
         
-        <line x1="140" y1="55" x2="52" y2="75" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-micro)" />
-        <line x1="160" y1="55" x2="132" y2="75" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-micro)" />
-        <line x1="180" y1="55" x2="212" y2="75" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-micro)" />
+        <line x1="100" y1="47" x2="40" y2="63" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrow-micro)" />
+        <line x1="120" y1="47" x2="100" y2="63" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrow-micro)" />
+        <line x1="140" y1="47" x2="160" y2="63" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrow-micro)" />
         
         <g filter="url(#shadow-micro)">
-          <rect x="120" y="10" width="80" height="45" fill="url(#primaryGrad-micro)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="12" />
-          <text x="160" y="37" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Gateway</text>
+          <rect x="80" y="10" width="80" height="37" fill="url(#primaryGrad-micro)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="10" />
+          <text x="120" y="32" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Gateway</text>
         </g>
         
         <g filter="url(#shadow-micro)">
-          <rect x="20" y="75" width="65" height="45" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="12" />
-          <text x="52" y="102" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Auth</text>
+          <rect x="10" y="63" width="60" height="37" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+          <text x="40" y="85" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Auth</text>
         </g>
         
         <g filter="url(#shadow-micro)">
-          <rect x="100" y="75" width="65" height="45" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="12" />
-          <text x="132" y="102" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Orders</text>
+          <rect x="80" y="63" width="60" height="37" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+          <text x="110" y="85" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Orders</text>
         </g>
         
         <g filter="url(#shadow-micro)">
-          <rect x="180" y="75" width="65" height="45" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="12" />
-          <text x="212" y="102" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Payment</text>
+          <rect x="150" y="63" width="70" height="37" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+          <text x="185" y="85" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Payment</text>
         </g>
       </svg>
     );
@@ -205,7 +188,7 @@ const DiagramPreview = ({ type }: { type: string }) => {
   
   if (type === "systems-auth") {
     return (
-      <svg viewBox="0 0 380 160" className="w-full h-auto">
+      <svg viewBox="0 0 300 100" className="w-full h-auto">
         <defs>
           <marker id="arrow-auth" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
             <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
@@ -221,34 +204,30 @@ const DiagramPreview = ({ type }: { type: string }) => {
             <stop offset="0%" stopColor="hsl(var(--secondary))" />
             <stop offset="100%" stopColor="hsl(var(--secondary-light))" />
           </linearGradient>
-          <linearGradient id="mutedGrad-auth" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="hsl(var(--muted))" />
-            <stop offset="100%" stopColor="hsl(var(--background))" />
-          </linearGradient>
         </defs>
         
-        <line x1="90" y1="80" x2="110" y2="80" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
-        <line x1="180" y1="80" x2="200" y2="80" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
-        <line x1="270" y1="80" x2="290" y2="80" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
+        <line x1="65" y1="50" x2="85" y2="50" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
+        <line x1="135" y1="50" x2="155" y2="50" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
+        <line x1="205" y1="50" x2="225" y2="50" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
         
         <g filter="url(#shadow-auth)">
-          <rect x="20" y="50" width="70" height="60" fill="url(#primaryGrad-auth)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="12" />
-          <text x="55" y="84" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">User</text>
+          <rect x="15" y="25" width="50" height="50" fill="url(#primaryGrad-auth)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="10" />
+          <text x="40" y="54" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">User</text>
         </g>
         
         <g filter="url(#shadow-auth)">
-          <rect x="110" y="50" width="70" height="60" fill="url(#secondaryGrad-auth)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="12" />
-          <text x="145" y="84" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Login</text>
+          <rect x="85" y="25" width="50" height="50" fill="url(#secondaryGrad-auth)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+          <text x="110" y="54" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Login</text>
         </g>
         
         <g filter="url(#shadow-auth)">
-          <rect x="200" y="50" width="70" height="60" fill="url(#secondaryGrad-auth)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="12" />
-          <text x="235" y="84" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Verify</text>
+          <rect x="155" y="25" width="50" height="50" fill="url(#secondaryGrad-auth)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+          <text x="180" y="54" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Verify</text>
         </g>
         
         <g filter="url(#shadow-auth)">
-          <rect x="290" y="50" width="70" height="60" fill="url(#mutedGrad-auth)" stroke="hsl(var(--muted-foreground))" strokeWidth="2.5" rx="12" />
-          <text x="325" y="84" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">DB</text>
+          <rect x="225" y="25" width="50" height="50" fill="hsl(var(--muted))" stroke="hsl(var(--muted-foreground))" strokeWidth="2.5" strokeDasharray="4,3" rx="10" opacity="0.7" />
+          <text x="250" y="54" fontSize="11" fontWeight="700" fill="hsl(var(--muted-foreground))" textAnchor="middle">DB?</text>
         </g>
       </svg>
     );
@@ -256,10 +235,10 @@ const DiagramPreview = ({ type }: { type: string }) => {
   
   // Default library database
   return (
-    <svg viewBox="0 0 320 180" className="w-full h-auto">
+    <svg viewBox="0 0 280 130" className="w-full h-auto">
       <defs>
         <marker id="arrow-lib" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
-          <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
+          <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--secondary))" />
         </marker>
         <filter id="shadow-lib">
           <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.15"/>
@@ -268,39 +247,33 @@ const DiagramPreview = ({ type }: { type: string }) => {
           <stop offset="0%" stopColor="hsl(var(--primary-light))" />
           <stop offset="100%" stopColor="hsl(var(--background))" />
         </linearGradient>
-        <linearGradient id="linkGrad-lib" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="hsl(var(--secondary-light))" />
-          <stop offset="100%" stopColor="hsl(var(--background))" />
-        </linearGradient>
       </defs>
       
+      <line x1="60" y1="53" x2="110" y2="75" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" markerEnd="url(#arrow-lib)" />
+      <line x1="210" y1="53" x2="160" y2="75" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" markerEnd="url(#arrow-lib)" />
+      
       <g filter="url(#shadow-lib)">
-        <rect x="15" y="15" width="90" height="61" fill="url(#tableGrad-lib)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
-        <rect x="15" y="15" width="90" height="25" fill="hsl(var(--primary))" rx="8" />
-        <text x="60" y="32" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Books</text>
-        <text x="23" y="52" fontSize="9" fill="hsl(var(--foreground))" fontWeight="500">🔑 book_id</text>
-        <text x="23" y="63" fontSize="9" fill="hsl(var(--muted-foreground))">   title</text>
-        <text x="23" y="74" fontSize="9" fill="hsl(var(--muted-foreground))">   author</text>
+        <rect x="15" y="15" width="90" height="48" fill="url(#tableGrad-lib)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
+        <rect x="15" y="15" width="90" height="22" fill="hsl(var(--primary))" rx="8" />
+        <text x="60" y="30" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Books</text>
+        <text x="20" y="48" fontSize="8" fill="hsl(var(--foreground))" fontWeight="500">🔑 book_id</text>
+        <text x="20" y="58" fontSize="8" fill="hsl(var(--muted-foreground))">   title, author</text>
       </g>
       
       <g filter="url(#shadow-lib)">
-        <rect x="215" y="15" width="90" height="61" fill="url(#tableGrad-lib)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
-        <rect x="215" y="15" width="90" height="25" fill="hsl(var(--primary))" rx="8" />
-        <text x="260" y="32" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Members</text>
-        <text x="223" y="52" fontSize="9" fill="hsl(var(--foreground))" fontWeight="500">🔑 member_id</text>
-        <text x="223" y="63" fontSize="9" fill="hsl(var(--muted-foreground))">   name</text>
+        <rect x="175" y="15" width="90" height="48" fill="url(#tableGrad-lib)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
+        <rect x="175" y="15" width="90" height="22" fill="hsl(var(--primary))" rx="8" />
+        <text x="220" y="30" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Members</text>
+        <text x="180" y="48" fontSize="8" fill="hsl(var(--foreground))" fontWeight="500">🔑 member_id</text>
+        <text x="180" y="58" fontSize="8" fill="hsl(var(--muted-foreground))">   name</text>
       </g>
       
       <g filter="url(#shadow-lib)">
-        <rect x="105" y="95" width="110" height="50" fill="url(#linkGrad-lib)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="8" />
-        <rect x="105" y="95" width="110" height="20" fill="hsl(var(--secondary))" rx="8" />
-        <text x="160" y="109" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Loans</text>
-        <text x="113" y="127" fontSize="9" fill="hsl(var(--foreground))" fontWeight="500">🔑 loan_id</text>
-        <text x="113" y="139" fontSize="9" fill="hsl(var(--muted-foreground))">🔗 book_id, member_id</text>
+        <rect x="85" y="75" width="110" height="40" fill="hsl(var(--muted))" stroke="hsl(var(--secondary))" strokeWidth="2.5" strokeDasharray="4,3" rx="8" opacity="0.7" />
+        <rect x="85" y="75" width="110" height="18" fill="hsl(var(--secondary))" rx="8" opacity="0.7" />
+        <text x="140" y="88" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Loans</text>
+        <text x="90" y="106" fontSize="8" fill="hsl(var(--muted-foreground))">🔗 book_id, member_id</text>
       </g>
-      
-      <line x1="70" y1="76" x2="140" y2="95" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" />
-      <line x1="250" y1="76" x2="180" y2="95" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" />
     </svg>
   );
 };
