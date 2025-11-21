@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import heroMock from "@/assets/hero-mock.jpg";
+import { Badge } from "@/components/ui/badge";
 
 const Hero = () => {
   return (
@@ -40,20 +40,63 @@ const Hero = () => {
 
           {/* Right: Visual Mock */}
           <div className="animate-slide-in">
-            <div className="relative rounded-xl border border-border bg-card p-4 shadow-2xl">
+            <div className="relative rounded-xl border border-border bg-card p-6 shadow-2xl">
               <div className="absolute -top-3 left-4 rounded-md bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
                 LivingCanvas Assignment
               </div>
-              <img 
-                src={heroMock} 
-                alt="LivingCanvas assignment interface in LMS"
-                className="w-full rounded-lg"
-              />
-              <div className="mt-4 flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">Database Schema Assignment</span>
-                <span className="rounded-full bg-primary-light px-3 py-1 text-xs font-medium text-primary">
+              
+              {/* LMS Interface Mock */}
+              <div className="rounded-lg border border-border bg-muted/30 p-4 mb-4">
+                <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm">
+                      LC
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">Database Schema Assignment</div>
+                      <div className="text-xs text-muted-foreground">CS 201 • Due Mar 15, 2025</div>
+                    </div>
+                  </div>
+                  <Badge className="bg-primary">Active</Badge>
+                </div>
+                
+                {/* Diagram Preview */}
+                <div className="bg-background rounded-lg p-4 border border-border">
+                  <svg viewBox="0 0 300 140" className="w-full h-auto">
+                    {/* Customers table */}
+                    <rect x="20" y="20" width="100" height="60" fill="hsl(var(--primary-light))" stroke="hsl(var(--primary))" strokeWidth="2" rx="6" />
+                    <text x="70" y="40" fontSize="12" fontWeight="600" fill="hsl(var(--primary))" textAnchor="middle">Customers</text>
+                    <text x="28" y="55" fontSize="9" fill="hsl(var(--muted-foreground))">• customer_id</text>
+                    <text x="28" y="67" fontSize="9" fill="hsl(var(--muted-foreground))">• name</text>
+                    <text x="28" y="79" fontSize="9" fill="hsl(var(--muted-foreground))">• email</text>
+                    
+                    {/* Orders table */}
+                    <rect x="180" y="20" width="100" height="60" fill="hsl(var(--primary-light))" stroke="hsl(var(--primary))" strokeWidth="2" rx="6" />
+                    <text x="230" y="40" fontSize="12" fontWeight="600" fill="hsl(var(--primary))" textAnchor="middle">Orders</text>
+                    <text x="188" y="55" fontSize="9" fill="hsl(var(--muted-foreground))">• order_id</text>
+                    <text x="188" y="67" fontSize="9" fill="hsl(var(--muted-foreground))">• customer_id</text>
+                    <text x="188" y="79" fontSize="9" fill="hsl(var(--muted-foreground))">• total</text>
+                    
+                    {/* Relationship arrow */}
+                    <line x1="120" y1="50" x2="180" y2="50" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow)" />
+                    <defs>
+                      <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="hsl(var(--primary))" />
+                      </marker>
+                    </defs>
+                    
+                    {/* Items table */}
+                    <rect x="100" y="100" width="100" height="30" fill="hsl(var(--secondary-light))" stroke="hsl(var(--secondary))" strokeWidth="2" rx="6" />
+                    <text x="150" y="120" fontSize="11" fontWeight="600" fill="hsl(var(--secondary))" textAnchor="middle">Order_Items</text>
+                  </svg>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-muted-foreground">Normalize Customer/Orders Schema</span>
+                <Badge variant="outline" className="bg-primary-light text-primary border-primary">
                   80 submissions
-                </span>
+                </Badge>
               </div>
             </div>
           </div>
