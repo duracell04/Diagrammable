@@ -167,8 +167,16 @@ const Hero = () => {
                     </g>
                     
                     {/* Relationship arrow */}
-                    <line x1="132" y1="52" x2="188" y2="52" stroke="hsl(var(--primary))" strokeWidth="3" markerEnd="url(#arrow)" className="arrow-main" />
-                    <text x="160" y="48" fontSize="9" fill="hsl(var(--primary))" fontWeight="600" textAnchor="middle" className="relationship-label">1:N</text>
+                    <line x1="132" y1="52" x2="188" y2="52" stroke="hsl(var(--primary))" strokeWidth="5" markerEnd="url(#arrow)" className="arrow-main" />
+                    
+                    {/* Cardinality labels on arrow */}
+                    <g className="relationship-label">
+                      <circle cx="140" cy="52" r="10" fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth="2" />
+                      <text x="140" y="56" fontSize="10" fontWeight="700" fill="hsl(var(--primary))" textAnchor="middle">1</text>
+                      
+                      <circle cx="180" cy="52" r="10" fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth="2" />
+                      <text x="180" y="56" fontSize="10" fontWeight="700" fill="hsl(var(--primary))" textAnchor="middle">N</text>
+                    </g>
                     
                     {/* Order_Items table */}
                     <g filter="url(#shadow)" className="table-3">
