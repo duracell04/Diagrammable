@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, Mail, CheckCircle } from "lucide-react";
@@ -58,7 +58,7 @@ const Waitlist = () => {
             </Button>
             
             <Button variant="outline" size="lg" asChild>
-              <Link to="/">
+              <Link href="/">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Home
               </Link>

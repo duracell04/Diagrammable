@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, CheckCircle } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const FinalCTA = () => {
   return (
@@ -21,13 +21,13 @@ const FinalCTA = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button variant="hero" size="lg" className="group" asChild>
-              <Link to="/waitlist">
+              <Link href="/waitlist">
                 Start Free Trial
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button variant="hero-secondary" size="lg" className="group" asChild>
-              <Link to="/demo-assignment">
+              <Link href="/demo-assignment">
                 <Play className="mr-2 h-4 w-4" />
                 Demo assignment
               </Link>

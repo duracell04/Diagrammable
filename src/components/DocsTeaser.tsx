@@ -1,7 +1,7 @@
+import Link from "next/link";
 import { GitBranch, ArrowRight, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
 
 const DocsTeaser = () => {
   return (
@@ -86,7 +86,7 @@ const DocsTeaser = () => {
             and agencies managing technical content.
           </p>
           <Button variant="hero" size="lg" asChild>
-            <Link to="/waitlist">
+            <Link href="/waitlist">
               Join Docs Early Access
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, BookOpen, Database, Users, FileText, Download, Lock } from "lucide-react";
@@ -10,7 +10,7 @@ const UserManual = () => {
       <header className="border-b border-border bg-muted/30 py-8">
         <div className="container mx-auto max-w-4xl px-6">
           <Button variant="ghost" size="sm" asChild className="mb-4">
-            <Link to="/">
+            <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to home
             </Link>
@@ -455,7 +455,7 @@ const UserManual = () => {
         {/* Back to top */}
         <div className="text-center pt-8 border-t border-border">
           <Button variant="outline" asChild>
-            <Link to="/">
+            <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to home
             </Link>
@@ -467,3 +467,4 @@ const UserManual = () => {
 };
 
 export default UserManual;
+

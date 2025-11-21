@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -20,34 +20,32 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#classroom" className="hover:text-foreground transition-colors">Classroom</a></li>
               <li><a href="#docs" className="hover:text-foreground transition-colors">Docs</a></li>
-              <li><Link to="/pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
+              <li><Link href="/pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-3 text-sm">Resources</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/user-manual" className="hover:text-foreground transition-colors">Documentation</Link></li>
-              <li><Link to="/template-library" className="hover:text-foreground transition-colors">Template Library</Link></li>
-              <li><Link to="/support" className="hover:text-foreground transition-colors">Support</Link></li>
+              <li><Link href="/user-manual" className="hover:text-foreground transition-colors">Documentation</Link></li>
+              <li><Link href="/template-library" className="hover:text-foreground transition-colors">Template Library</Link></li>
+              <li><Link href="/support" className="hover:text-foreground transition-colors">Support</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-3 text-sm">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/about" className="hover:text-foreground transition-colors">About</Link></li>
-              <li><Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
-              <li><Link to="/waitlist" className="hover:text-foreground transition-colors">Contact</Link></li>
+              <li><Link href="/about" className="hover:text-foreground transition-colors">About</Link></li>
+              <li><Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
+              <li><Link href="/waitlist" className="hover:text-foreground transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © 2025 LivingCanvas. All rights reserved.
-            </p>
+            <p className="text-sm text-muted-foreground">(c) 2025 LivingCanvas. All rights reserved.</p>
             <div className="flex gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
               <a href="#" className="hover:text-foreground transition-colors">Terms</a>

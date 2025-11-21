@@ -1,5 +1,5 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -17,17 +17,17 @@ const Header = () => {
           <a href="#docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Docs
           </a>
-          <Link to="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Pricing
           </Link>
         </nav>
 
         <div className="flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <Link to="/signin">Sign In</Link>
+            <Link href="/signin">Sign In</Link>
           </Button>
           <Button variant="hero" size="sm" asChild>
-            <Link to="/waitlist">Start Free Trial</Link>
+            <Link href="/waitlist">Start Free Trial</Link>
           </Button>
         </div>
       </div>

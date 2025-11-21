@@ -1,7 +1,7 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
 import { Check, Sparkles, Users, Database, Shield, Zap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -80,7 +80,7 @@ const Pricing = () => {
 
               <div className="space-y-3">
                 <Button size="lg" className="w-full text-lg h-12" asChild>
-                  <Link to="/waitlist">
+                  <Link href="/waitlist">
                     Claim Your Free Access
                   </Link>
                 </Button>
@@ -146,7 +146,7 @@ const Pricing = () => {
             Join educators worldwide who are making database concepts come alive with interactive diagrams.
           </p>
           <Button size="lg" className="text-lg h-12 px-8" asChild>
-            <Link to="/waitlist">
+            <Link href="/waitlist">
               Get Started Free
             </Link>
           </Button>

@@ -1,7 +1,7 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -37,7 +37,7 @@ const Blog = () => {
       
       <main className="container mx-auto px-6 py-16">
         <Button variant="ghost" size="sm" asChild className="mb-6">
-          <Link to="/">
+          <Link href="/">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to home
           </Link>
@@ -77,7 +77,7 @@ const Blog = () => {
               More articles coming soon! Subscribe to our newsletter for updates.
             </p>
             <Button asChild>
-              <Link to="/waitlist">Subscribe for Updates</Link>
+              <Link href="/waitlist">Subscribe for Updates</Link>
             </Button>
           </div>
         </div>

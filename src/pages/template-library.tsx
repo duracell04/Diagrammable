@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 import { ArrowLeft, Database, Network, GitBranch } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -33,7 +33,7 @@ const TemplateLibrary = () => {
       
       <main className="container mx-auto px-6 py-16">
         <Button variant="ghost" size="sm" asChild className="mb-6">
-          <Link to="/">
+          <Link href="/">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to home
           </Link>
@@ -61,7 +61,7 @@ const TemplateLibrary = () => {
               This feature is currently in development. Check back soon for a full library of templates!
             </p>
             <Button asChild>
-              <Link to="/waitlist">Join Waitlist for Updates</Link>
+              <Link href="/waitlist">Join Waitlist for Updates</Link>
             </Button>
           </div>
         </div>

@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 import { ArrowLeft, Mail, MessageCircle, Book, Video } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -40,7 +40,7 @@ const Support = () => {
       
       <main className="container mx-auto px-6 py-16">
         <Button variant="ghost" size="sm" asChild className="mb-6">
-          <Link to="/">
+          <Link href="/">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to home
           </Link>
@@ -60,7 +60,7 @@ const Support = () => {
                 <p className="text-muted-foreground mb-4">{option.description}</p>
                 <Button variant="outline" asChild={!!option.link}>
                   {option.link ? (
-                    <Link to={option.link}>{option.action}</Link>
+                    <Link href={option.link}>{option.action}</Link>
                   ) : (
                     <span>{option.action}</span>
                   )}
@@ -75,7 +75,7 @@ const Support = () => {
               Our support team is here to help you succeed with LivingCanvas
             </p>
             <Button size="lg" asChild>
-              <Link to="/waitlist">Contact Support Team</Link>
+              <Link href="/waitlist">Contact Support Team</Link>
             </Button>
           </div>
         </div>
