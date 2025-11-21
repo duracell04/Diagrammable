@@ -17,7 +17,7 @@ const Waitlist = () => {
           </h1>
           
           <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-            LivingCanvas Classroom is currently in early access. We're onboarding new instructors and institutions carefully to ensure the best experience.
+            Diagrammable Classroom is currently in early access. We're onboarding new instructors and institutions carefully to ensure the best experience.
           </p>
 
           <div className="bg-muted/50 rounded-lg p-6 mb-8">
@@ -26,7 +26,7 @@ const Waitlist = () => {
             </p>
             
             <a 
-              href="mailto:andro@akallabs.io?subject=LivingCanvas%20Waitlist%20Request"
+              href="mailto:andro@akallabs.io?subject=Diagrammable%20Waitlist%20Request"
               className="inline-flex items-center gap-2 text-lg font-semibold text-primary hover:underline"
             >
               <Mail className="h-5 w-5" />
@@ -51,7 +51,7 @@ const Waitlist = () => {
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button size="lg" asChild>
-              <a href="mailto:andro@akallabs.io?subject=LivingCanvas%20Waitlist%20Request">
+              <a href="mailto:andro@akallabs.io?subject=Diagrammable%20Waitlist%20Request">
                 <Mail className="mr-2 h-4 w-4" />
                 Send Waitlist Request
               </a>

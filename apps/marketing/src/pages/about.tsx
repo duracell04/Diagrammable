@@ -19,7 +19,7 @@ const About = () => {
 
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            About LivingCanvas
+            About Diagrammable
           </h1>
           
           <div className="prose prose-lg max-w-none mb-12">
@@ -59,12 +59,12 @@ const About = () => {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mb-4">The Story Behind LivingCanvas</h2>
+            <h2 className="text-3xl font-bold mb-4">The Story Behind Diagrammable</h2>
             <p className="text-muted-foreground mb-4">
-              LivingCanvas was born from the frustration of teaching database design with static tools. Traditional diagram tools did not capture student engagement or provide insights into their learning process.
+              Diagrammable was born from the frustration of teaching database design with static tools. Traditional diagram tools did not capture student engagement or provide insights into their learning process.
             </p>
             <p className="text-muted-foreground mb-4">
-              We built LivingCanvas to bridge this gap, creating a platform where diagrams come alive, academic integrity is maintained, and educators gain real insights into student understanding.
+              We built Diagrammable to bridge this gap, creating a platform where diagrams come alive, academic integrity is maintained, and educators gain real insights into student understanding.
             </p>
 
             <div className="mt-12 p-8 rounded-lg bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/20">

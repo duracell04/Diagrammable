@@ -19,7 +19,7 @@ const Hero = () => {
             </h1>
             
             <p className="mb-8 text-lg text-muted-foreground max-w-xl">
-              LivingCanvas turns schema and system-design tasks into interactive assignments inside Moodle and WordPress LMS. 
+              Diagrammable turns schema and system-design tasks into interactive assignments inside Moodle and WordPress LMS. 
               Students complete diagrams in the browser; you review every submission from one dashboard and cut grading time in half.
             </p>
 
@@ -39,7 +39,7 @@ const Hero = () => {
             </div>
 
             <p className="mt-6 text-sm text-muted-foreground">
-              No credit card required • Moodle, LearnDash, TutorLMS, LifterLMS
+              No credit card required - Moodle, LearnDash, TutorLMS, LifterLMS
             </p>
           </div>
 
@@ -47,16 +47,18 @@ const Hero = () => {
           <div className="animate-slide-in">
             <div className="relative rounded-xl border border-border bg-card p-6 shadow-2xl">
               <div className="absolute -top-3 left-4 rounded-md bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
-                LivingCanvas Assignment
+                Diagrammable Assignment
               </div>
               
               {/* LMS Interface Mock */}
               <div className="rounded-lg border border-border bg-muted/30 p-4 mb-4">
                 <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
                   <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm">
-                      LC
-                    </div>
+                    <img
+                      src="/diagrammable-logo.svg"
+                      alt="Diagrammable logo"
+                      className="h-10 w-10 rounded-lg bg-white shadow-sm border border-border p-1.5"
+                    />
                     <div>
                       <div className="font-semibold text-sm">Database Schema Assignment</div>
                       <div className="text-xs text-muted-foreground">CS 201 • Due Mar 15, 2025</div>

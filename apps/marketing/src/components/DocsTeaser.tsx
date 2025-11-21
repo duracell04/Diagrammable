@@ -9,13 +9,13 @@ const DocsTeaser = () => {
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center max-w-3xl mx-auto">
           <div className="mb-4 inline-block rounded-md bg-secondary/10 px-3 py-1 text-sm font-medium text-secondary">
-            LivingCanvas Docs
+            Diagrammable Docs
           </div>
           <h2 className="text-3xl font-bold mb-4">
             Keep your WordPress diagrams in sync with Git.
           </h2>
           <p className="text-lg text-muted-foreground">
-            LivingCanvas Docs connects your Mermaid files in GitHub to your WordPress pages. 
+            Diagrammable Docs connects your Mermaid files in GitHub to your WordPress pages. 
             Update the diagram in the repo; your docs follow automatically – with pinned commit SHAs and no broken embeds.
           </p>
         </div>
@@ -64,7 +64,7 @@ const DocsTeaser = () => {
             </div>
 
             <div className="rounded-lg border-2 border-secondary bg-secondary-light p-4 mb-3">
-              <div className="text-xs font-medium text-secondary mb-2">LivingCanvas Diagram (Git-synced)</div>
+              <div className="text-xs font-medium text-secondary mb-2">Diagrammable Diagram (Git-synced)</div>
               <div className="h-20 bg-background rounded flex items-center justify-center text-[10px] text-muted-foreground">
                 Rendered diagram SVG
               </div>

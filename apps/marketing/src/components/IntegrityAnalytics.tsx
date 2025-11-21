@@ -13,7 +13,7 @@ const IntegrityAnalytics = () => {
             Built to support integrity, not just grading.
           </h2>
           <p className="text-lg text-muted-foreground">
-            LivingCanvas surfaces basic similarity and timing signals so you can focus your attention where it matters.
+            Diagrammable surfaces basic similarity and timing signals so you can focus your attention where it matters.
           </p>
         </div>
 

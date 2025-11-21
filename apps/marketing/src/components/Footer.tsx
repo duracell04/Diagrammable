@@ -8,7 +8,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-secondary" />
-              <span className="text-lg font-bold">LivingCanvas</span>
+              <span className="text-lg font-bold">Diagrammable</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Turn diagrams into interactive assignments for CS and IT courses.
@@ -45,7 +45,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">(c) 2025 LivingCanvas. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground">(c) 2025 Diagrammable. All rights reserved.</p>
             <div className="flex gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
               <a href="#" className="hover:text-foreground transition-colors">Terms</a>

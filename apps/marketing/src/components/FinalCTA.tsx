@@ -12,7 +12,7 @@ const FinalCTA = () => {
           </div>
 
           <h2 className="text-4xl font-bold mb-4">
-            Try LivingCanvas with your next cohort.
+            Try Diagrammable with your next cohort.
           </h2>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">

@@ -49,7 +49,7 @@ const ProblemSolution = () => {
             Solution
           </div>
           <h3 className="text-2xl font-bold mb-3">
-            LivingCanvas turns diagrams into real assignments, not attachments.
+            Diagrammable turns diagrams into real assignments, not attachments.
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Students work directly in the browser. You see every submission in one dashboard. 

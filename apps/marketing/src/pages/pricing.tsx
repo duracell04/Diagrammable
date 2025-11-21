@@ -35,7 +35,7 @@ const Pricing = () => {
             100% Free for All of 2026
           </h1>
           <p className="text-xl text-muted-foreground mb-2">
-            Get unlimited access to LivingCanvas for the entire year.
+            Get unlimited access to Diagrammable for the entire year.
           </p>
           <p className="text-lg text-muted-foreground">
             No credit card required. No hidden fees. Just education.
@@ -85,7 +85,7 @@ const Pricing = () => {
                   </Link>
                 </Button>
                 <p className="text-xs text-center text-muted-foreground">
-                  Join thousands of educators already using LivingCanvas
+                  Join thousands of educators already using Diagrammable
                 </p>
               </div>
             </div>
@@ -101,14 +101,14 @@ const Pricing = () => {
               <h3 className="font-semibold mb-2">Why is it free?</h3>
               <p className="text-muted-foreground">
                 We're offering free access throughout 2026 to help educators improve database education 
-                and gather feedback to make LivingCanvas the best tool possible.
+                and gather feedback to make Diagrammable the best tool possible.
               </p>
             </div>
 
             <div className="rounded-lg border border-border bg-card p-6">
               <h3 className="font-semibold mb-2">Do I need a credit card?</h3>
               <p className="text-muted-foreground">
-                No! Simply sign up with your email and start using LivingCanvas immediately. 
+                No! Simply sign up with your email and start using Diagrammable immediately. 
                 No payment information required.
               </p>
             </div>
@@ -132,7 +132,7 @@ const Pricing = () => {
             <div className="rounded-lg border border-border bg-card p-6">
               <h3 className="font-semibold mb-2">Can I use this for multiple classes?</h3>
               <p className="text-muted-foreground">
-                Absolutely! Use LivingCanvas for all your database courses, workshops, and tutorials. 
+                Absolutely! Use Diagrammable for all your database courses, workshops, and tutorials. 
                 Perfect for universities, bootcamps, and online courses.
               </p>
             </div>

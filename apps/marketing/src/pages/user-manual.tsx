@@ -19,7 +19,7 @@ const UserManual = () => {
           <div className="flex items-center gap-3 mb-4">
             <BookOpen className="h-8 w-8 text-primary" />
             <h1 className="text-3xl font-bold tracking-tight">
-              LivingCanvas Classroom – User Manual (MVP)
+              Diagrammable Classroom – User Manual (MVP)
             </h1>
           </div>
           
@@ -28,7 +28,7 @@ const UserManual = () => {
           </p>
           
           <p className="mt-4 text-muted-foreground max-w-3xl">
-            LivingCanvas turns schema and system-design tasks into interactive assignments inside Moodle and WordPress-based LMSs. 
+            Diagrammable turns schema and system-design tasks into interactive assignments inside Moodle and WordPress-based LMSs. 
             Students work on diagrams directly in the browser; you review everything from a single dashboard instead of juggling dozens of PDFs or screenshots.
           </p>
         </div>
@@ -43,7 +43,7 @@ const UserManual = () => {
             Table of Contents
           </h2>
           <nav className="grid md:grid-cols-2 gap-2 text-sm">
-            <a href="#what-is" className="text-primary hover:underline">1. What LivingCanvas Classroom is</a>
+            <a href="#what-is" className="text-primary hover:underline">1. What Diagrammable Classroom is</a>
             <a href="#core-concepts" className="text-primary hover:underline">2. Core concepts</a>
             <a href="#getting-started" className="text-primary hover:underline">3. Getting started</a>
             <a href="#template-library" className="text-primary hover:underline">4. Template Library</a>
@@ -61,11 +61,11 @@ const UserManual = () => {
         <section id="what-is" className="mb-12">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <Database className="h-6 w-6 text-primary" />
-            1. What LivingCanvas Classroom is
+            1. What Diagrammable Classroom is
           </h2>
           
           <p className="mb-4 text-muted-foreground">
-            LivingCanvas Classroom is an LMS integration (Moodle module + WordPress plugin) that lets you:
+            Diagrammable Classroom is an LMS integration (Moodle module + WordPress plugin) that lets you:
           </p>
           
           <ul className="list-disc pl-6 mb-6 space-y-2 text-muted-foreground">
@@ -88,9 +88,9 @@ const UserManual = () => {
 
           <Card className="p-4 bg-muted/30 border-l-4 border-l-primary">
             <h3 className="font-semibold mb-2">1.1 Supported platforms (MVP)</h3>
-            <p className="text-sm text-muted-foreground mb-3">LivingCanvas Classroom currently supports:</p>
+            <p className="text-sm text-muted-foreground mb-3">Diagrammable Classroom currently supports:</p>
             <ul className="text-sm text-muted-foreground space-y-1">
-              <li><strong>Moodle</strong> (as an activity module: mod_livingcanvas)</li>
+              <li><strong>Moodle</strong> (as an activity module: mod_Diagrammable)</li>
               <li><strong>WordPress LMS</strong>, via a WordPress plugin:
                 <ul className="list-disc pl-6 mt-1">
                   <li>LearnDash</li>
@@ -146,7 +146,7 @@ const UserManual = () => {
             <div>
               <h3 className="text-lg font-semibold mb-2">2.3 Assignment</h3>
               <p className="text-muted-foreground mb-3">
-                A LivingCanvas Assignment is a regular LMS activity that uses a specific template and automatically creates Student-Copies as students open it.
+                A Diagrammable Assignment is a regular LMS activity that uses a specific template and automatically creates Student-Copies as students open it.
               </p>
             </div>
 
@@ -168,7 +168,7 @@ const UserManual = () => {
           <ul className="list-disc pl-6 text-muted-foreground space-y-1 mb-6">
             <li>A supported LMS (Moodle or WordPress with a supported LMS plugin)</li>
             <li>Instructor/teacher privileges in that LMS</li>
-            <li>The LivingCanvas Classroom plugin/module installed and activated</li>
+            <li>The Diagrammable Classroom plugin/module installed and activated</li>
           </ul>
 
           <h3 className="text-lg font-semibold mb-3">3.2 Installation overview</h3>
@@ -178,7 +178,7 @@ const UserManual = () => {
             <ol className="list-decimal pl-6 text-sm text-muted-foreground space-y-1">
               <li>Log in as a WordPress admin</li>
               <li>Go to Plugins → Add New</li>
-              <li>Search for "LivingCanvas Classroom" or upload the provided .zip file</li>
+              <li>Search for "Diagrammable Classroom" or upload the provided .zip file</li>
               <li>Click Install, then Activate</li>
               <li>Follow the plugin's onboarding wizard</li>
             </ol>
@@ -188,7 +188,7 @@ const UserManual = () => {
             <h4 className="font-semibold mb-2">3.2.2 Moodle</h4>
             <ol className="list-decimal pl-6 text-sm text-muted-foreground space-y-1">
               <li>Log in as a site administrator</li>
-              <li>Upload the mod_livingcanvas package via Site administration → Plugins → Install plugins</li>
+              <li>Upload the mod_Diagrammable package via Site administration → Plugins → Install plugins</li>
               <li>Confirm installation and run any database upgrade steps</li>
               <li>Optionally configure global settings</li>
             </ol>
@@ -225,13 +225,13 @@ const UserManual = () => {
 
         {/* Sections 5-11 with similar structure */}
         <section id="creating-assignment" className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">5. Creating a LivingCanvas assignment</h2>
+          <h2 className="text-2xl font-bold mb-4">5. Creating a Diagrammable assignment</h2>
           <div className="space-y-4">
             <Card className="p-4 bg-muted/30">
               <h3 className="font-semibold mb-2">5.1 In WordPress LMS</h3>
               <ol className="list-decimal pl-6 text-sm text-muted-foreground space-y-1">
                 <li>Edit a lesson/topic</li>
-                <li>Add "LivingCanvas Assignment" block</li>
+                <li>Add "Diagrammable Assignment" block</li>
                 <li>Select template from the library</li>
                 <li>Set points and due date (optional)</li>
                 <li>Save lesson</li>
@@ -242,7 +242,7 @@ const UserManual = () => {
               <h3 className="font-semibold mb-2">5.2 In Moodle</h3>
               <ol className="list-decimal pl-6 text-sm text-muted-foreground space-y-1">
                 <li>Turn editing on</li>
-                <li>Add an activity → LivingCanvas Assignment</li>
+                <li>Add an activity → Diagrammable Assignment</li>
                 <li>Name it and choose template</li>
                 <li>Set grade and due date</li>
                 <li>Save and return to course</li>
@@ -257,7 +257,7 @@ const UserManual = () => {
             6. Student experience
           </h2>
           <p className="text-muted-foreground mb-4">
-            From the student's perspective, LivingCanvas looks and behaves like part of the LMS.
+            From the student's perspective, Diagrammable looks and behaves like part of the LMS.
           </p>
           
           <div className="space-y-4">
@@ -265,7 +265,7 @@ const UserManual = () => {
               <h3 className="text-lg font-semibold mb-2">6.1 Opening the assignment</h3>
               <p className="text-sm text-muted-foreground">
                 Students see an embedded diagram frame with a "Start" button. On first open, 
-                LivingCanvas creates their personal Student-Copy.
+                Diagrammable creates their personal Student-Copy.
               </p>
             </div>
 
@@ -289,7 +289,7 @@ const UserManual = () => {
 
             <Card className="p-4 bg-muted/30 border-l-4 border-l-secondary">
               <p className="text-sm">
-                <strong>🧑‍🎓 No extra accounts:</strong> Students never create a LivingCanvas account. 
+                <strong>🧑‍🎓 No extra accounts:</strong> Students never create a Diagrammable account. 
                 All access happens via their existing Moodle / WordPress LMS session.
               </p>
             </Card>
@@ -390,9 +390,9 @@ const UserManual = () => {
           <h3 className="text-lg font-semibold mb-3">10.2 Privacy model</h3>
           <Card className="p-4 bg-muted/30 border-l-4 border-l-primary">
             <p className="text-sm text-muted-foreground mb-3">
-              LivingCanvas is designed to keep personally identifiable information (PII) inside your LMS.
+              Diagrammable is designed to keep personally identifiable information (PII) inside your LMS.
             </p>
-            <p className="text-sm text-muted-foreground mb-2">The LivingCanvas backend stores:</p>
+            <p className="text-sm text-muted-foreground mb-2">The Diagrammable backend stores:</p>
             <ul className="list-disc pl-6 text-sm text-muted-foreground space-y-1">
               <li>A hashed student identifier (e.g. sha256(siteSalt + lmsStudentId))</li>
               <li>Diagram data (shapes, labels, connections)</li>
@@ -413,7 +413,7 @@ const UserManual = () => {
             <Card className="p-4 bg-muted/30">
               <h3 className="font-semibold mb-3">Create assignment (WordPress)</h3>
               <ol className="list-decimal pl-6 text-sm text-muted-foreground space-y-1">
-                <li>Edit lesson → Add LivingCanvas Assignment block</li>
+                <li>Edit lesson → Add Diagrammable Assignment block</li>
                 <li>Click Select template → pick one</li>
                 <li>Set points/due date (optional)</li>
                 <li>Save lesson</li>
@@ -423,7 +423,7 @@ const UserManual = () => {
             <Card className="p-4 bg-muted/30">
               <h3 className="font-semibold mb-3">Create assignment (Moodle)</h3>
               <ol className="list-decimal pl-6 text-sm text-muted-foreground space-y-1">
-                <li>Turn editing on → Add activity → LivingCanvas</li>
+                <li>Turn editing on → Add activity → Diagrammable</li>
                 <li>Name it, choose template</li>
                 <li>Set grade/due date</li>
                 <li>Save and return to course</li>

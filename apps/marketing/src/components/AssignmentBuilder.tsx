@@ -10,7 +10,7 @@ const AssignmentBuilder = () => {
             Module 2: Assignment Builder (Moodle / WordPress LMS plugin)
           </div>
           <h2 className="text-3xl font-bold mb-4">
-            Add a LivingCanvas assignment to your course.
+            Add a Diagrammable assignment to your course.
           </h2>
           <p className="text-lg text-muted-foreground">
             Choose a template, set points and a due date, and publish – all inside the LMS you already use.
@@ -44,7 +44,7 @@ const AssignmentBuilder = () => {
                   <div className="h-6 w-6 rounded bg-primary flex items-center justify-center text-white text-xs font-bold">
                     LC
                   </div>
-                  <span className="font-semibold text-sm">LivingCanvas Assignment</span>
+                  <span className="font-semibold text-sm">Diagrammable Assignment</span>
                 </div>
                 <div className="text-xs text-muted-foreground">
                   Template: Normalize Customer/Orders Schema
@@ -105,7 +105,7 @@ const AssignmentBuilder = () => {
 
             <div className="rounded-lg bg-secondary-light border border-secondary p-4">
               <p className="text-sm text-secondary-foreground">
-                <span className="font-semibold">One-click embed.</span> LivingCanvas appears as a 
+                <span className="font-semibold">One-click embed.</span> Diagrammable appears as a 
                 native assignment type in your course editor.
               </p>
             </div>

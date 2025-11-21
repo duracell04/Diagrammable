@@ -49,7 +49,7 @@ const Support = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold tracking-tight mb-4">Support Center</h1>
           <p className="text-xl text-muted-foreground mb-12">
-            Get the help you need to make the most of LivingCanvas
+            Get the help you need to make the most of Diagrammable
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -72,7 +72,7 @@ const Support = () => {
           <div className="text-center p-8 rounded-lg bg-muted/50">
             <h2 className="text-2xl font-bold mb-4">Need immediate assistance?</h2>
             <p className="text-muted-foreground mb-6">
-              Our support team is here to help you succeed with LivingCanvas
+              Our support team is here to help you succeed with Diagrammable
             </p>
             <Button size="lg" asChild>
               <Link href="/waitlist">Contact Support Team</Link>
