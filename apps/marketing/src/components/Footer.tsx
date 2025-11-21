@@ -7,7 +7,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-secondary" />
+              <img
+                src="/diagrammable-favicon.svg"
+                alt="Diagrammable logo"
+                className="h-8 w-8"
+              />
               <span className="text-lg font-bold">Diagrammable</span>
             </div>
             <p className="text-sm text-muted-foreground">

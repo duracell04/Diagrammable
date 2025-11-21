@@ -53,12 +53,12 @@ const Hero = () => {
               {/* LMS Interface Mock */}
               <div className="rounded-lg border border-border bg-muted/30 p-4 mb-4">
                 <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src="/diagrammable-logo.svg"
-                      alt="Diagrammable logo"
-                      className="h-10 w-10 rounded-lg bg-white shadow-sm border border-border p-1.5"
-                    />
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/diagrammable-favicon.svg"
+                    alt="Diagrammable logo"
+                    className="h-10 w-10 rounded-lg bg-white shadow-sm border border-border p-1.5"
+                  />
                     <div>
                       <div className="font-semibold text-sm">Database Schema Assignment</div>
                       <div className="text-xs text-muted-foreground">CS 201 • Due Mar 15, 2025</div>

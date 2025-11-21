@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
         <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <img
-            src="/diagrammable-logo.svg"
+            src="/diagrammable-favicon.svg"
             alt="Diagrammable logo"
             className="h-8 w-8"
           />
