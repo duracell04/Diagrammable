@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -27,9 +28,11 @@ const Hero = () => {
                 Start free 30-day trial
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="hero-secondary" size="lg" className="group">
-                <Play className="mr-2 h-4 w-4" />
-                Play with demo assignment
+              <Button variant="hero-secondary" size="lg" className="group" asChild>
+                <Link to="/demo-assignment">
+                  <Play className="mr-2 h-4 w-4" />
+                  Play with demo assignment
+                </Link>
               </Button>
             </div>
 
