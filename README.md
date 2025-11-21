@@ -193,18 +193,18 @@ This is not a full plagiarism engine. It is a way to help instructors spot unusu
 
 High-level architecture (MVP):
 
-- Frontend:
-  - React and TypeScript
-  - shadcn-ui components
-  - Tailwind CSS for styling
-  - Bundled with Vite for local development and the demo app
+- Frontend apps (Next.js + TypeScript + Tailwind + shadcn-ui):
+  - `apps/marketing`: public site and interactive demo (no real LMS calls).
+  - `apps/classroom`: real teacher + student experience that reads LMS context and talks to live repositories.
+- Shared packages:
+  - `packages/core`: domain model, types, repositories (demo + live), integrity helpers.
+  - `packages/theme`: shared Tailwind tokens/brandbook (imported by both apps).
 - Backend (planned):
-  - Node and TypeScript API (REST)
-  - Diagram storage as JSON with small metadata
-  - No raw student PII: only hashed IDs from the LMS
+  - Node/TS API (REST or Next route handlers), storing templates, assignments, student copies, and integrity data.
+  - No raw student PII: only hashed IDs from the LMS.
 - LMS plugins:
-  - WordPress plugin with a Gutenberg block and admin pages and embedding the Diagrammable editor and dashboard in the LMS
-  - Moodle `mod_diagrammable` activity with gradebook integration and a privacy provider
+  - WordPress plugin with a Gutenberg block and admin pages embedding the classroom views.
+  - Moodle `mod_diagrammable` activity with gradebook integration and a privacy provider.
 
 Privacy by design: Diagrammable stores a hashed student identifier plus diagram data and timestamps. The mapping from hash to real student identity stays inside the LMS.
 
@@ -217,7 +217,7 @@ For more background on concepts and flows, see the planned docs under `docs/` (f
 ### Prerequisites
 
 - Node.js 18 or newer (recommended)
-- Package manager: `pnpm` (preferred) or `npm`
+- Package manager: `pnpm` 9.x (workspace is configured for pnpm)
 
 ### Install & run
 
@@ -227,56 +227,43 @@ Clone the repo and install dependencies:
 git clone https://github.com/duracell04/Diagrammable.git
 cd Diagrammable
 
-# with pnpm
 pnpm install
-
-# or with npm
-npm install
 ```
 
-Run the dev server:
+Run the dev servers (separate Next.js apps):
 
 ```bash
-# with pnpm
-pnpm dev
+# Marketing site + demo (demo LMS data, public pages)
+pnpm dev:marketing
 
-# or with npm
-npm run dev
+# Classroom app (teacher dashboards + student editor, real LMS context)
+pnpm dev:classroom
 ```
 
-Open the playground at http://localhost:3000/ in your browser.
+Open the marketing playground at http://localhost:3000/ in your browser.
 
 - Browse the Template Library (mock data).
 - Open a Demo Assignment with fake student data.
 - Use the Single Submission View modal to see how grading will work.
 - Experiment with the dashboard UI before wiring it up to a real LMS.
 
-Note: Actual LMS plugins (Moodle and WordPress) will live in dedicated folders (for example, `lms/moodle/` and `lms/wordpress/`) with their own README once scaffolding is added.
+Open the classroom app at http://localhost:3001/ (or the port reported by Next) to work on the real flows against live repositories as they land.
+
+Note: LMS plugins now live under `plugins/wordpress` and `plugins/moodle`.
 
 ### Project structure
 
-The repo is currently a single web-app Vite + React project.
-
-Key files and folders (may evolve):
-
-- `src/` - main React app
-- `src/components/` - shared UI components (editor, dashboard, and more)
-- `src/pages/` or `src/routes/` - routes for landing and demo views
-- `src/lib/` - helpers, mock data, types
-- `public/` - static assets
-- `tailwind.config.ts` - Tailwind config and design tokens
-- `vite.config.ts` - Vite bundler configuration
-- `tsconfig*.json` - TypeScript configuration
-
-As the project grows, this will split into:
-
-- `apps/demo` - self-contained playground and landing
-- `apps/lms-moodle` and `apps/lms-wordpress` - plugin UIs
-- `packages/editor-core` - reusable diagram editor core
+- `apps/marketing/` — public site + interactive demo, still using the existing pages and components.
+- `apps/classroom/` — real teacher/student app that will talk to live repositories and LMS context.
+- `packages/core/` — shared domain model, repositories, and integrity helpers (framework-agnostic).
+- `packages/theme/` — shared brandbook and Tailwind tokens imported by both apps.
+- `plugins/wordpress/` — WordPress LMS adapter (PHP; scaffolded).
+- `plugins/moodle/` — Moodle activity module (PHP; scaffolded).
+- Root configs — `package.json` (workspace scripts), `pnpm-workspace.yaml`, `tsconfig.base.json`.
 
 ### Demo playground
 
-The playground simulates both instructor and student flows.
+The marketing app (`apps/marketing`) simulates both instructor and student flows with mock data.
 
 - Instructor view:
   - Template Library

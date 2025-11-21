@@ -1,0 +1,13 @@
+{
+  "name": "@diagrammable/theme",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/styles.css",
+  "files": [
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ]
+}
