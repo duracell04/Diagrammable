@@ -134,7 +134,7 @@ const Hero = () => {
                       }
                       .arrow-main {
                         stroke-dasharray: 100;
-                        animation: drawLine 0.8s ease-out 0.8s both, pulse 2s ease-in-out 1.6s infinite;
+                        animation: drawLine 0.8s ease-out 0.8s both;
                       }
                       .connection-line {
                         stroke-dasharray: 100;
@@ -167,7 +167,7 @@ const Hero = () => {
                     </g>
                     
                     {/* Relationship arrow */}
-                    <line x1="125" y1="52" x2="195" y2="52" stroke="hsl(var(--primary))" strokeWidth="3" markerEnd="url(#arrow)" className="arrow-main" />
+                    <line x1="132" y1="52" x2="188" y2="52" stroke="hsl(var(--primary))" strokeWidth="3" markerEnd="url(#arrow)" className="arrow-main" />
                     <text x="160" y="48" fontSize="9" fill="hsl(var(--primary))" fontWeight="600" textAnchor="middle" className="relationship-label">1:N</text>
                     
                     {/* Order_Items table */}
