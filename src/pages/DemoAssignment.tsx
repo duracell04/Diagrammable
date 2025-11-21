@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Database, Clock, CheckCircle2, Users, ArrowLeft } from "lucide-react";
+import { Database, Clock, CheckCircle2, Users, ArrowLeft, Eye, MessageSquare, Star, Download } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const DiagramPreview = () => {
   return (
@@ -52,9 +54,55 @@ const DiagramPreview = () => {
 };
 
 const DemoAssignment = () => {
+  const { toast } = useToast();
+  const [expandedDashboard, setExpandedDashboard] = useState(false);
+
+  const students = [
+    { initials: "MC", name: "Maya Chen", status: "Submitted", lastActivity: "2h ago", timeSpent: "18m", grade: "—" },
+    { initials: "AK", name: "Alex Kumar", status: "Submitted", lastActivity: "5h ago", timeSpent: "24m", grade: "95" },
+    { initials: "JL", name: "Jordan Lee", status: "In Progress", lastActivity: "1h ago", timeSpent: "12m", grade: "—" },
+    { initials: "SR", name: "Sam Rivera", status: "Submitted", lastActivity: "3h ago", timeSpent: "7s", grade: "—" },
+    { initials: "RP", name: "Riley Park", status: "Submitted", lastActivity: "4h ago", timeSpent: "31m", grade: "88" },
+  ];
+
+  const handleView = (studentName: string) => {
+    toast({
+      title: "Opening submission",
+      description: `Viewing ${studentName}'s diagram...`,
+    });
+  };
+
+  const handleComment = (studentName: string) => {
+    toast({
+      title: "Add feedback",
+      description: `Adding comment for ${studentName}...`,
+    });
+  };
+
+  const handleGrade = (studentName: string) => {
+    toast({
+      title: "Grading",
+      description: `Opening grade panel for ${studentName}...`,
+    });
+  };
+
+  const handleExportCSV = () => {
+    toast({
+      title: "Exporting CSV",
+      description: "Generating CSV file with all submissions...",
+    });
+  };
+
+  const handleExportPNGs = () => {
+    toast({
+      title: "Exporting PNGs",
+      description: "Creating ZIP file with all diagram images...",
+    });
+  };
+
   return (
     <main className="min-h-screen bg-muted py-16">
-      <div className="container mx-auto max-w-5xl px-6">
+      <div className="container mx-auto max-w-7xl px-6">
         {/* Header */}
         <header className="mb-10 space-y-4">
           <Button variant="ghost" size="sm" asChild className="mb-2">
@@ -69,25 +117,98 @@ const DemoAssignment = () => {
             Live demo assignment · Databases · Intermediate
           </div>
           <h1 className="text-3xl font-bold tracking-tight">
-            See a LivingCanvas assignment from the instructor's view.
+            Database Schema Assignment
           </h1>
-          <p className="max-w-2xl text-lg text-muted-foreground">
-            This demo shows exactly what a CS instructor sees when they assign a
-            database-normalisation task. Students complete the schema diagram in
-            the browser; you review every submission from a single dashboard.
+          <p className="max-w-2xl text-muted-foreground">
+            CS 201 • Due March 15, 2025
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <Button size="lg">
-              Open interactive demo
+            <Button size="default" variant="outline" onClick={handleExportCSV}>
+              <Download className="mr-2 h-4 w-4" />
+              Export CSV
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link to="/#classroom">
-                Back to template library
-              </Link>
+            <Button size="default" variant="outline" onClick={handleExportPNGs}>
+              <Download className="mr-2 h-4 w-4" />
+              Export PNGs (ZIP)
             </Button>
           </div>
         </header>
+
+        {/* Full Dashboard Table */}
+        <Card className="overflow-hidden border-border bg-background shadow-sm mb-8">
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead className="border-b border-border bg-muted/50">
+                <tr>
+                  <th className="px-6 py-3 text-left text-xs font-semibold">Student</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold">Status</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold">Last Activity</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold">Time Spent</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold">Grade</th>
+                  <th className="px-4 py-3 text-right text-xs font-semibold">Actions</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {students.map((student, idx) => (
+                  <tr key={idx} className="hover:bg-muted/30 transition-colors">
+                    <td className="px-6 py-4">
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
+                          {student.initials}
+                        </div>
+                        <span className="text-sm font-medium">{student.name}</span>
+                      </div>
+                    </td>
+                    <td className="px-4 py-4">
+                      <Badge 
+                        variant={student.status === "Submitted" ? "default" : "secondary"}
+                        className="text-xs"
+                      >
+                        {student.status}
+                      </Badge>
+                    </td>
+                    <td className="px-4 py-4 text-sm text-muted-foreground">{student.lastActivity}</td>
+                    <td className="px-4 py-4 text-sm text-muted-foreground">{student.timeSpent}</td>
+                    <td className="px-4 py-4">
+                      <span className="text-sm font-semibold text-primary">
+                        {student.grade}
+                      </span>
+                    </td>
+                    <td className="px-4 py-4">
+                      <div className="flex items-center justify-end gap-2">
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={() => handleView(student.name)}
+                          className="h-8 w-8 p-0"
+                        >
+                          <Eye className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={() => handleComment(student.name)}
+                          className="h-8 w-8 p-0"
+                        >
+                          <MessageSquare className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={() => handleGrade(student.name)}
+                          className="h-8 w-8 p-0"
+                        >
+                          <Star className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Card>
 
         {/* Main layout: assignment card + sidebar */}
         <section className="grid gap-8 lg:grid-cols-[2fr,1.4fr]">
@@ -105,7 +226,7 @@ const DemoAssignment = () => {
                     <span className="text-muted-foreground">CS 201</span>
                   </div>
                   <h2 className="mt-1 text-sm font-semibold">
-                    Database Schema Assignment
+                    Assignment Details
                   </h2>
                 </div>
               </div>
@@ -186,64 +307,17 @@ const DemoAssignment = () => {
               </div>
             </Card>
 
-            {/* Sample rows from grading table */}
-            <Card className="border-border bg-background">
-              <div className="flex items-center justify-between border-b border-border px-4 py-3">
-                <div className="flex items-center gap-2 text-sm font-semibold">
-                  <CheckCircle2 className="h-4 w-4 text-primary" />
-                  <span>Sample submissions</span>
-                </div>
-              </div>
-              <div className="divide-y divide-border text-xs">
-                {[
-                  {
-                    name: "Alex Müller",
-                    status: "Graded",
-                    grade: "9 / 10",
-                    time: "16 min"
-                  },
-                  {
-                    name: "Sara K.",
-                    status: "Needs review",
-                    grade: "—",
-                    time: "5 min"
-                  },
-                  {
-                    name: "Dev Patel",
-                    status: "Graded",
-                    grade: "10 / 10",
-                    time: "19 min"
-                  }
-                ].map((s, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center justify-between px-4 py-3"
-                  >
-                    <div>
-                      <p className="font-medium text-foreground">{s.name}</p>
-                      <p className="text-[11px] text-muted-foreground">
-                        {s.status} • {s.time} in editor
-                      </p>
-                    </div>
-                    <span className="text-[11px] font-semibold text-primary">
-                      {s.grade}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </Card>
-
             {/* "How this demo works" */}
             <Card className="border-dashed border-border bg-muted/40 px-4 py-3 text-xs text-muted-foreground">
               <div className="mb-1 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-foreground">
                 <Clock className="h-3 w-3" />
-                <span>What happens when you click "Open interactive demo"</span>
+                <span>Interactive actions available</span>
               </div>
-              <ol className="list-decimal space-y-1 pl-4">
-                <li>A demo class with 10 fake students is created.</li>
-                <li>You see the same dashboard our real customers use.</li>
-                <li>No signup required; nothing you do here is permanent.</li>
-              </ol>
+              <ul className="list-disc space-y-1 pl-4">
+                <li><strong>View:</strong> Open student's diagram in detail view</li>
+                <li><strong>Comment:</strong> Add feedback to submission</li>
+                <li><strong>Grade:</strong> Assign points and finalize grade</li>
+              </ul>
             </Card>
           </div>
         </section>
