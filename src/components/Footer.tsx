@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-background py-12">
@@ -18,25 +20,25 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#classroom" className="hover:text-foreground transition-colors">Classroom</a></li>
               <li><a href="#docs" className="hover:text-foreground transition-colors">Docs</a></li>
-              <li><a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a></li>
+              <li><Link to="/pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-3 text-sm">Resources</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Template Library</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Support</a></li>
+              <li><Link to="/user-manual" className="hover:text-foreground transition-colors">Documentation</Link></li>
+              <li><Link to="/template-library" className="hover:text-foreground transition-colors">Template Library</Link></li>
+              <li><Link to="/support" className="hover:text-foreground transition-colors">Support</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-3 text-sm">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
+              <li><Link to="/about" className="hover:text-foreground transition-colors">About</Link></li>
+              <li><Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
+              <li><Link to="/waitlist" className="hover:text-foreground transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>

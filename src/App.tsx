@@ -8,6 +8,10 @@ import DemoAssignment from "./pages/DemoAssignment";
 import UserManual from "./pages/UserManual";
 import Waitlist from "./pages/Waitlist";
 import Pricing from "./pages/Pricing";
+import TemplateLibrary from "./pages/TemplateLibrary";
+import Support from "./pages/Support";
+import About from "./pages/About";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +27,10 @@ const App = () => (
           <Route path="/demo-assignment" element={<DemoAssignment />} />
           <Route path="/user-manual" element={<UserManual />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/template-library" element={<TemplateLibrary />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/waitlist" element={<Waitlist />} />
           <Route path="/signin" element={<Waitlist />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
