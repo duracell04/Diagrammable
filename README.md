@@ -31,11 +31,21 @@
 - [AI integration roadmap](#ai-integration-roadmap)
   - [1. AI for template & assignment design](#1-ai-for-template--assignment-design)
   - [2. AI for instructor feedback & grading support](#2-ai-for-instructor-feedback--grading-support)
-  - [3. AI for integrity analytics](#3-ai-for-integrity-analytics)
-  - [4. AI helpers for students (opt-in)](#4-ai-helpers-for-students-opt-in)
-  - [5. AI for Docs product (later phase)](#5-ai-for-docs-product-later-phase)
+- [3. AI for integrity analytics](#3-ai-for-integrity-analytics)
+- [4. AI helpers for students (opt-in)](#4-ai-helpers-for-students-opt-in)
+- [5. AI for Docs product (later phase)](#5-ai-for-docs-product-later-phase)
+- [Status (2025-11)](#status-2025-11)
 - [Contributing](#contributing)
 - [License](#license)
+
+---
+
+## Status (2025-11)
+
+- Done: landing site + demo dashboard (marketing app) with mock data
+- Done: Template Library UI and demo assignment walkthrough
+- In progress: student editor wiring (marketing demo only today)
+- Not started: Moodle/WordPress plugins and docs folder (demo shell only right now)
 
 ---
 
@@ -193,7 +203,7 @@ This is not a full plagiarism engine. It is a way to help instructors spot unusu
 
 High-level architecture (MVP):
 
-- Frontend apps (Next.js + TypeScript + Tailwind + shadcn-ui):
+- Frontend apps (Next.js pages router + TypeScript + Tailwind + shadcn-ui):
   - `apps/marketing`: public site and interactive demo (no real LMS calls).
   - `apps/classroom`: real teacher + student experience that reads LMS context and talks to live repositories.
 - Shared packages:
@@ -207,8 +217,6 @@ High-level architecture (MVP):
   - Moodle `mod_diagrammable` activity with gradebook integration and a privacy provider.
 
 Privacy by design: Diagrammable stores a hashed student identifier plus diagram data and timestamps. The mapping from hash to real student identity stays inside the LMS.
-
-For more background on concepts and flows, see the planned docs under `docs/` (for example, `docs/concepts.md` and `docs/lms-integration.md`) once they are added.
 
 ---
 
@@ -253,13 +261,13 @@ Note: LMS plugins now live under `plugins/wordpress` and `plugins/moodle`.
 
 ### Project structure
 
-- `apps/marketing/` — public site + interactive demo, still using the existing pages and components.
-- `apps/classroom/` — real teacher/student app that will talk to live repositories and LMS context.
-- `packages/core/` — shared domain model, repositories, and integrity helpers (framework-agnostic).
-- `packages/theme/` — shared brandbook and Tailwind tokens imported by both apps.
-- `plugins/wordpress/` — WordPress LMS adapter (PHP; scaffolded).
-- `plugins/moodle/` — Moodle activity module (PHP; scaffolded).
-- Root configs — `package.json` (workspace scripts), `pnpm-workspace.yaml`, `tsconfig.base.json`.
+- `apps/marketing/` - public Next.js site + interactive demo (mock LMS data).
+- `apps/classroom/` - Next.js app for real teacher/student flows (LMS context integration).
+- `packages/core/` - shared domain model, repositories, and integrity helpers (framework-agnostic).
+- `packages/theme/` - shared brandbook and Tailwind tokens imported by both apps.
+- `plugins/wordpress/` - WordPress LMS adapter (PHP; planned scaffold).
+- `plugins/moodle/` - Moodle activity module (PHP; planned scaffold).
+- Root configs - `package.json` (workspace scripts), `pnpm-workspace.yaml`, `tsconfig.base.json`.
 
 ### Demo playground
 
@@ -274,24 +282,22 @@ The marketing app (`apps/marketing`) simulates both instructor and student flows
 
 Use this to try UX ideas before they hit a real course, capture screenshots or GIFs for docs and plugin listings, and test integrity metrics and analytics layouts with mock data.
 
+Quick tweaks for contributors:
+- Demo assignment rows and grading modal live in `apps/marketing/src/pages/demo-assignment.tsx`.
+- Template Library cards are defined in `apps/marketing/src/components/TemplateLibrary.tsx`.
+
 ---
 
 ## LMS integration status
 
 Diagrammable is being developed with LMS integration in mind but Moodle and WordPress plugins are not yet production-ready.
 
-Planned structure:
+Planned structure (to be scaffolded):
 
-- `lms/moodle/`:
-  - `mod_diagrammable` activity plugin
-  - Privacy provider (no PII to external services)
-  - Gradebook integration
-- `lms/wordpress/`:
-  - `diagrammable-classroom` plugin
-  - Gutenberg block registration
-  - Settings pages for API key, site ID, and related configuration
+- `plugins/moodle/mod_diagrammable/`: activity plugin, privacy provider, gradebook integration.
+- `plugins/wordpress/` (plugin slug TBD): Gutenberg block, settings page for API key and site ID.
 
-Until these are wired up, the repo primarily provides the editor and dashboard UI plus a fake LMS wrapper in the demo.
+Until these land, the repo primarily provides the editor and dashboard UI plus a fake LMS wrapper in the marketing demo.
 
 ---
 

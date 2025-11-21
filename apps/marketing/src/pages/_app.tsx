@@ -18,8 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
           name="description"
           content="Diagrammable turns schema and system-design tasks into interactive LMS assignments with grading dashboards and integrity signals."
         />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" sizes="any" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/diagrammable-favicon.svg" />
       </Head>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
