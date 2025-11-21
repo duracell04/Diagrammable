@@ -64,8 +64,8 @@ const Hero = () => {
                 <div className="bg-gradient-to-br from-background to-muted rounded-lg p-6 border border-border">
                   <svg viewBox="0 0 320 160" className="w-full h-auto">
                     <defs>
-                      <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                        <polygon points="0 0, 10 3, 0 6" fill="hsl(var(--primary))" />
+                      <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
+                        <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
                       </marker>
                       <filter id="shadow">
                         <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.15"/>
