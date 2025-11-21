@@ -176,7 +176,7 @@ const Hero = () => {
                     </g>
                     
                     {/* Relationship arrow - thin arrow between badges */}
-                    <line x1="148" y1="52" x2="172" y2="52" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow)" className="arrow-main" />
+                    <line x1="148" y1="52" x2="168" y2="52" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow)" className="arrow-main" />
                     
                     {/* Order_Items table */}
                     <g filter="url(#shadow)" className="table-3">
