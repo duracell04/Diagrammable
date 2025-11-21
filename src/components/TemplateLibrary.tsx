@@ -141,7 +141,7 @@ const DiagramPreview = ({ type }: { type: string }) => {
   
   if (type === "systems-microservices") {
     return (
-      <svg viewBox="0 0 240 120" className="w-full h-auto">
+      <svg viewBox="0 0 240 130" className="w-full h-auto">
         <defs>
           <marker id="arrow-micro" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
             <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--primary))" />
@@ -159,27 +159,27 @@ const DiagramPreview = ({ type }: { type: string }) => {
           </linearGradient>
         </defs>
         
-        <line x1="100" y1="50" x2="40" y2="68" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrow-micro)" />
-        <line x1="120" y1="50" x2="100" y2="68" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrow-micro)" />
-        <line x1="140" y1="50" x2="160" y2="68" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrow-micro)" />
+        <line x1="100" y1="52" x2="40" y2="70" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrow-micro)" />
+        <line x1="120" y1="52" x2="100" y2="70" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrow-micro)" />
+        <line x1="140" y1="52" x2="160" y2="70" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrow-micro)" />
         
         <g filter="url(#shadow-micro)">
-          <rect x="80" y="15" width="80" height="35" fill="url(#primaryGrad-micro)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="10" />
-          <text x="120" y="36" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Gateway</text>
+          <rect x="80" y="20" width="80" height="32" fill="url(#primaryGrad-micro)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="10" />
+          <text x="120" y="39" fontSize="12" fontWeight="700" fill="white" textAnchor="middle">Gateway</text>
         </g>
         
         <g filter="url(#shadow-micro)">
-          <rect x="10" y="68" width="60" height="35" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+          <rect x="10" y="70" width="60" height="32" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
           <text x="40" y="89" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Auth</text>
         </g>
         
         <g filter="url(#shadow-micro)">
-          <rect x="80" y="68" width="60" height="35" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+          <rect x="80" y="70" width="60" height="32" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
           <text x="110" y="89" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Orders</text>
         </g>
         
         <g filter="url(#shadow-micro)">
-          <rect x="150" y="68" width="70" height="35" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+          <rect x="150" y="70" width="70" height="32" fill="url(#secondaryGrad-micro)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
           <text x="185" y="89" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Payment</text>
         </g>
       </svg>
@@ -235,7 +235,7 @@ const DiagramPreview = ({ type }: { type: string }) => {
   
   // Default library database
   return (
-    <svg viewBox="0 0 280 140" className="w-full h-auto">
+    <svg viewBox="0 0 280 150" className="w-full h-auto">
       <defs>
         <marker id="arrow-lib" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
           <polygon points="0 0, 6 2, 0 4" fill="hsl(var(--secondary))" />
@@ -249,30 +249,30 @@ const DiagramPreview = ({ type }: { type: string }) => {
         </linearGradient>
       </defs>
       
-      <line x1="60" y1="58" x2="110" y2="82" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" markerEnd="url(#arrow-lib)" />
-      <line x1="210" y1="58" x2="160" y2="82" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" markerEnd="url(#arrow-lib)" />
+      <line x1="60" y1="60" x2="110" y2="86" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" markerEnd="url(#arrow-lib)" />
+      <line x1="210" y1="60" x2="160" y2="86" stroke="hsl(var(--secondary))" strokeWidth="2" opacity="0.6" strokeDasharray="4,3" markerEnd="url(#arrow-lib)" />
       
       <g filter="url(#shadow-lib)">
-        <rect x="15" y="20" width="90" height="48" fill="url(#tableGrad-lib)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
-        <rect x="15" y="20" width="90" height="22" fill="hsl(var(--primary))" rx="8" />
-        <text x="60" y="35" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Books</text>
-        <text x="20" y="53" fontSize="8" fill="hsl(var(--foreground))" fontWeight="500">🔑 book_id</text>
-        <text x="20" y="63" fontSize="8" fill="hsl(var(--muted-foreground))">   title, author</text>
+        <rect x="15" y="22" width="90" height="48" fill="url(#tableGrad-lib)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
+        <rect x="15" y="22" width="90" height="22" fill="hsl(var(--primary))" rx="8" />
+        <text x="60" y="37" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Books</text>
+        <text x="20" y="55" fontSize="8" fill="hsl(var(--foreground))" fontWeight="500">🔑 book_id</text>
+        <text x="20" y="65" fontSize="8" fill="hsl(var(--muted-foreground))">   title, author</text>
       </g>
       
       <g filter="url(#shadow-lib)">
-        <rect x="175" y="20" width="90" height="48" fill="url(#tableGrad-lib)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
-        <rect x="175" y="20" width="90" height="22" fill="hsl(var(--primary))" rx="8" />
-        <text x="220" y="35" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Members</text>
-        <text x="180" y="53" fontSize="8" fill="hsl(var(--foreground))" fontWeight="500">🔑 member_id</text>
-        <text x="180" y="63" fontSize="8" fill="hsl(var(--muted-foreground))">   name</text>
+        <rect x="175" y="22" width="90" height="48" fill="url(#tableGrad-lib)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
+        <rect x="175" y="22" width="90" height="22" fill="hsl(var(--primary))" rx="8" />
+        <text x="220" y="37" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Members</text>
+        <text x="180" y="55" fontSize="8" fill="hsl(var(--foreground))" fontWeight="500">🔑 member_id</text>
+        <text x="180" y="65" fontSize="8" fill="hsl(var(--muted-foreground))">   name</text>
       </g>
       
       <g filter="url(#shadow-lib)">
-        <rect x="85" y="82" width="110" height="40" fill="hsl(var(--muted))" stroke="hsl(var(--secondary))" strokeWidth="2.5" strokeDasharray="4,3" rx="8" opacity="0.7" />
-        <rect x="85" y="82" width="110" height="18" fill="hsl(var(--secondary))" rx="8" opacity="0.7" />
-        <text x="140" y="95" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Loans</text>
-        <text x="90" y="113" fontSize="8" fill="hsl(var(--muted-foreground))">🔗 book_id, member_id</text>
+        <rect x="85" y="86" width="110" height="40" fill="hsl(var(--muted))" stroke="hsl(var(--secondary))" strokeWidth="2.5" strokeDasharray="4,3" rx="8" opacity="0.7" />
+        <rect x="85" y="86" width="110" height="18" fill="hsl(var(--secondary))" rx="8" opacity="0.7" />
+        <text x="140" y="99" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Loans</text>
+        <text x="90" y="117" fontSize="8" fill="hsl(var(--muted-foreground))">🔗 book_id, member_id</text>
       </g>
     </svg>
   );
