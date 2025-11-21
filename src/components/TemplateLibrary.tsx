@@ -19,31 +19,33 @@ const DiagramPreview = ({ type }: { type: string }) => {
           </linearGradient>
         </defs>
         
-        <g filter="url(#shadow-norm)">
-          <rect x="15" y="15" width="110" height="75" fill="url(#tableGrad-norm)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
-          <rect x="15" y="15" width="110" height="28" fill="hsl(var(--primary))" rx="8" />
-          <text x="70" y="34" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Customers</text>
-          <text x="23" y="58" fontSize="10" fill="hsl(var(--foreground))" fontWeight="500">🔑 customer_id</text>
-          <text x="23" y="72" fontSize="10" fill="hsl(var(--muted-foreground))">   name</text>
-          <text x="23" y="86" fontSize="10" fill="hsl(var(--muted-foreground))">   email</text>
+        <g transform="translate(130, 60) scale(0.82) translate(-160, -52)">
+          <g filter="url(#shadow-norm)">
+            <rect x="15" y="15" width="110" height="75" fill="url(#tableGrad-norm)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
+            <rect x="15" y="15" width="110" height="28" fill="hsl(var(--primary))" rx="8" />
+            <text x="70" y="34" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Customers</text>
+            <text x="23" y="58" fontSize="10" fill="hsl(var(--foreground))" fontWeight="500">🔑 customer_id</text>
+            <text x="23" y="72" fontSize="10" fill="hsl(var(--muted-foreground))">   name</text>
+            <text x="23" y="86" fontSize="10" fill="hsl(var(--muted-foreground))">   email</text>
+          </g>
+          
+          <g filter="url(#shadow-norm)">
+            <rect x="195" y="15" width="110" height="75" fill="url(#tableGrad-norm)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
+            <rect x="195" y="15" width="110" height="28" fill="hsl(var(--primary))" rx="8" />
+            <text x="250" y="34" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Orders</text>
+            <text x="203" y="58" fontSize="10" fill="hsl(var(--foreground))" fontWeight="500">🔑 order_id</text>
+            <text x="203" y="72" fontSize="10" fill="hsl(var(--muted-foreground))">🔗 customer_id</text>
+            <text x="203" y="86" fontSize="10" fill="hsl(var(--muted-foreground))">   total</text>
+          </g>
+          
+          <circle cx="138" cy="52" r="8" fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth="2" />
+          <text x="138" y="56" fontSize="10" fontWeight="700" fill="hsl(var(--primary))" textAnchor="middle">1</text>
+          
+          <circle cx="182" cy="52" r="8" fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth="2" />
+          <text x="182" y="56" fontSize="10" fontWeight="700" fill="hsl(var(--primary))" textAnchor="middle">N</text>
+          
+          <line x1="148" y1="52" x2="168" y2="52" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-norm)" />
         </g>
-        
-        <g filter="url(#shadow-norm)">
-          <rect x="195" y="15" width="110" height="75" fill="url(#tableGrad-norm)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="8" />
-          <rect x="195" y="15" width="110" height="28" fill="hsl(var(--primary))" rx="8" />
-          <text x="250" y="34" fontSize="13" fontWeight="700" fill="white" textAnchor="middle">Orders</text>
-          <text x="203" y="58" fontSize="10" fill="hsl(var(--foreground))" fontWeight="500">🔑 order_id</text>
-          <text x="203" y="72" fontSize="10" fill="hsl(var(--muted-foreground))">🔗 customer_id</text>
-          <text x="203" y="86" fontSize="10" fill="hsl(var(--muted-foreground))">   total</text>
-        </g>
-        
-        <circle cx="138" cy="52" r="8" fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth="2" />
-        <text x="138" y="56" fontSize="10" fontWeight="700" fill="hsl(var(--primary))" textAnchor="middle">1</text>
-        
-        <circle cx="182" cy="52" r="8" fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth="2" />
-        <text x="182" y="56" fontSize="10" fontWeight="700" fill="hsl(var(--primary))" textAnchor="middle">N</text>
-        
-        <line x1="148" y1="52" x2="168" y2="52" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-norm)" />
       </svg>
     );
   }
@@ -207,28 +209,30 @@ const DiagramPreview = ({ type }: { type: string }) => {
           </linearGradient>
         </defs>
         
-        <line x1="65" y1="60" x2="85" y2="60" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
-        <line x1="135" y1="60" x2="155" y2="60" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
-        <line x1="205" y1="60" x2="225" y2="60" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
-        
-        <g filter="url(#shadow-auth)">
-          <rect x="15" y="35" width="50" height="50" fill="url(#primaryGrad-auth)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="10" />
-          <text x="40" y="64" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">User</text>
-        </g>
-        
-        <g filter="url(#shadow-auth)">
-          <rect x="85" y="35" width="50" height="50" fill="url(#secondaryGrad-auth)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
-          <text x="110" y="64" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Login</text>
-        </g>
-        
-        <g filter="url(#shadow-auth)">
-          <rect x="155" y="35" width="50" height="50" fill="url(#secondaryGrad-auth)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
-          <text x="180" y="64" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Verify</text>
-        </g>
-        
-        <g filter="url(#shadow-auth)">
-          <rect x="225" y="35" width="50" height="50" fill="hsl(var(--muted))" stroke="hsl(var(--muted-foreground))" strokeWidth="2.5" strokeDasharray="4,3" rx="10" opacity="0.7" />
-          <text x="250" y="64" fontSize="11" fontWeight="700" fill="hsl(var(--muted-foreground))" textAnchor="middle">DB?</text>
+        <g transform="translate(130, 60) scale(0.88) translate(-137, -60)">
+          <line x1="65" y1="60" x2="85" y2="60" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
+          <line x1="135" y1="60" x2="155" y2="60" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
+          <line x1="205" y1="60" x2="225" y2="60" stroke="hsl(var(--primary))" strokeWidth="2.5" markerEnd="url(#arrow-auth)" />
+          
+          <g filter="url(#shadow-auth)">
+            <rect x="15" y="35" width="50" height="50" fill="url(#primaryGrad-auth)" stroke="hsl(var(--primary))" strokeWidth="2.5" rx="10" />
+            <text x="40" y="64" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">User</text>
+          </g>
+          
+          <g filter="url(#shadow-auth)">
+            <rect x="85" y="35" width="50" height="50" fill="url(#secondaryGrad-auth)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+            <text x="110" y="64" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Login</text>
+          </g>
+          
+          <g filter="url(#shadow-auth)">
+            <rect x="155" y="35" width="50" height="50" fill="url(#secondaryGrad-auth)" stroke="hsl(var(--secondary))" strokeWidth="2.5" rx="10" />
+            <text x="180" y="64" fontSize="11" fontWeight="700" fill="white" textAnchor="middle">Verify</text>
+          </g>
+          
+          <g filter="url(#shadow-auth)">
+            <rect x="225" y="35" width="50" height="50" fill="hsl(var(--muted))" stroke="hsl(var(--muted-foreground))" strokeWidth="2.5" strokeDasharray="4,3" rx="10" opacity="0.7" />
+            <text x="250" y="64" fontSize="11" fontWeight="700" fill="hsl(var(--muted-foreground))" textAnchor="middle">DB?</text>
+          </g>
         </g>
       </svg>
     );
